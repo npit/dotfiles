@@ -15,4 +15,4 @@ if [ ! -f "$scriptPath" ]; then
 	exit 1
 fi
 
-$EDITOR $scriptPath
+$TERM_EDITOR $scriptPath
