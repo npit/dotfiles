@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# docker service script
+[ $# -lt 1 ]  && echo "Usage $0 start/stop/restart" && exit 1
+arg="$1"
+sudo systemctl "$arg" docker

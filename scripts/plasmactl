@@ -1,0 +1,11 @@
+#!/bin/bash
+# plasma service helper script
+[ $# -lt 1 ] && echo "Need an argument (stop|restart)" && exit 1
+if [ "$1" == "stop" ]; then
+	kquitapp5 plasmashell;
+elif [ "$1" == "start" ]; then
+	kstart5 plasmashell;	
+elif [ "$1" == "restart" ]; then
+	kquitapp5 plasmashell;
+	kstart5 plasmashell
+fi

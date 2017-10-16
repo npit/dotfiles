@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# get all files from a root directory
+arg="$1"
+[ $# -lt 1 ] && arg="."
+if [ "$arg" == "row" ]; then 
+	find `pwd` -type f | tr '\n' ' '
+else
+	find `pwd` -type f
+fi

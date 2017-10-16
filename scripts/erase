@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# erase file contents
+[ $# -lt 1 ] && echo "Usage: $(basename $0) <filename>"
+
+echo "" > "$1"

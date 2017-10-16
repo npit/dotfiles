@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# controller script for teamviewer
+[ $# -lt  1 ] && echo "Usage: $0 <start|stop>" && exit 1
+
+arg="$1"
+if [ "$arg" == "start" ] || [ "$arg" == "stop"  ] || [ "$arg" == "restart"  ]  ; then
+  sudo systemctl "$arg" teamviewerd.service
+  teamviewer &
+else
+  echo "Usage: $0 <start|stop>" && exit 1
+fi

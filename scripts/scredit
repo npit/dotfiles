@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# edit a script
+[ $# -lt 1 ] && echo "Give the global script name to edit." && exit 1
+[ -z $SCRIPTS ] && echo "SCRIPTS variable is not set." && exit 1
+scriptPath="$SCRIPTS/$1"
+if [ ! -f "$scriptPath" ]; then
+	echo "Global script [$1] not found in scripts folder [$SCRIPTS]." 
+	AL="$(cat $CONFIG/aliases | grep $1)"
+	if [ ! "$AL" == "" ]; then
+		echo "Perhaps is in the below alias(es)?"
+		echo "-----------------------"
+		echo "$AL" 
+		echo "-----------------------"
+	fi
+	exit 1
+fi
+
+$EDITOR $scriptPath

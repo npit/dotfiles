@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# make an executable script
+if [ $# -lt 1 ]; then
+	echo "Usage: $0 <arg1> <arg2> ..."
+	exit 1
+fi
+
+for arg in ${@}; do
+	echo "#!/usr/bin/env bash" > "$arg"
+	echo "" >> "$arg"
+	chmod +x "$arg"
+	$EDITOR "$arg"
+done

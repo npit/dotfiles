@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# generate random text
+lines=20
+[ $# -gt 0 ] && lines=$1
+ tr -dc a-z1-4 </dev/urandom | tr 1-2 ' \n' | awk 'length==0 || length>50' | tr 3-4 ' ' | sed 's/^ *//' | cat -s | sed 's/ / /g' |fmt | head -n $lines

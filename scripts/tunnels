@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# get ssh connections
+echo "Active ssh tunnels:"
+sudo lsof -i -n | egrep '\<ssh\>'

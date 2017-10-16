@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# send a json via curl
+if [ $# -lt 2 ]; then
+        echo "sendjson <jsonfile> <address>"
+        exit
+fi
+data="$(cat $1)"
+
+address=$2
+
+response=$(curl  -s -i -H "Accept: application/json" -H "Content-Type:application/json" -X POST --data "$data" "$address")
+
+echo "Response:"
+echo "$response"#!/usr/bin/env bash
+

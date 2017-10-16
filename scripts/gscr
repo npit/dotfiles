@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# create new global script
+if [ "$#" -ne 1 ]; then
+	echo "Usage: $(basename $0) <scriptname>"
+	exit 1;
+fi
+$SCRIPTS/scr "$SCRIPTS/$1"
+# source the scripts
+source $CONFIG/aliases

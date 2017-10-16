@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+# script to automate studying papers
+[ -z `which xournal` ] && echo "Gotta install xournal." && exit 1
+[ $# -lt  1 ] && echo "Usage: $0 <documentPath>" && exit 1
+
+halfscreen="left"
+if [ $# -lt 2 ] ; then
+  halfscreen="$1"
+fi
+
+
+arg="$1"
+
+[ "$halfscreen" == "right" ] && source $SCRIPTS/wacomRight
+[ "$halfscreen" == "left" ] && source $SCRIPTS/wacomLeft
+
+# if a xournal file already exists, open that
+if [ -f "${arg}.xoj" ] ; then
+  echo "${arg}.xoj already exists, opening it."
+  okular "$arg" &
+  disown
+  xournal "${arg}.xoj" &
+  disown
+else
+  echo "Opening $arg."
+  okular "$arg" &
+  disown
+  xournal "$arg" &
+  disown
+fi

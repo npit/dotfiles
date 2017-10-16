@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# shortcut
+touch readme.txt
+$EDITOR readme.txt

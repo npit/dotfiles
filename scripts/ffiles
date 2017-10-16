@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# find files matching a pattern from the current directory
+findcmd="find $(pwd) -type f"
+[ "$1" == "-h" ] && echo "$( basename $0 <grepitem|e> <grepitem2|e> ... )" && exit 0
+[ $# -eq 0 ] && eval $findcmd && exit 0
+
+storage1=/tmp/ffiles1
+storage2=/tmp/ffiles2
+
+eval $findcmd > "$storage1"
+
+for arg in $@; do
+
+        [ "$arg" == "-r" ] && cat "$storage1" | tr '\n' ' '  &&  exit 0
+        cat "$storage1" | grep "$arg" > "$storage2"
+        rm "$storage1"
+        mv "$storage2" "$storage1"
+
+done
+
+cat "$storage1"
+

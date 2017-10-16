@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# shortcut for clean and make
+make clean && make

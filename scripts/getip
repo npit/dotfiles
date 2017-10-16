@@ -1,0 +1,3 @@
+#/bin/sh
+# find this pc's current public ip
+wget http://ipinfo.io/ip -qO -

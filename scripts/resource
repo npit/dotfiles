@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# source the dot profile files
+echo "Pofile:"
+cat ~/.profile
+
+echo  "Sourcing.."
+source ~/.profile
+
+echo "done!"
+echo

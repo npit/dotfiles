@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# download an mp3 from a youtube video.
+[ $# -lt 1 ] && echo "Usage: $0 <youtube-link>" && exit
+youtube-dl -x --audio-format mp3 "$1"

@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# find files containing a pattern
+if [ $# -eq 0 ]; then
+	echo "filesWith <searchTerm> <startDir|e>"
+	exit 1
+fi
+
+withWhat="$1"
+searchBaseDir="$(pwd)/"
+if [ $# -gt 1 ]; then
+	searchBaseDir="$2"
+fi
+# options
+if [ $# -gt 2 ]; then
+	opts="$3" # TODO parse all
+fi
+
+if [ ! "opts" == "-q" ]; then 
+
+	echo "Files from directory [$searchBaseDir] containing [$withWhat]:" 
+fi
+
+grep -l -i "$withWhat" $(find "$searchBaseDir" -type f | tr '\n' ' ' )

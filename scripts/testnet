@@ -1,0 +1,8 @@
+#! /usr/bin/env bash
+# test internet connection status
+if [ $# -gt 0 ]; then
+	[ "$1" == "dns" ] && ping www.google.com && exit 0
+	echo "Unknown param: $1"
+	exit 1
+fi
+ping 8.8.8.8

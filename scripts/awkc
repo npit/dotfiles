@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# awk column print shortcut
+[ $# -lt 1 ] && echo "Usage : $0 <colnum>" && exit 1
+
+awk -v var="$1" '{print $var}'

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# convert linebreaks to a single row
+input="$1"
+echo "$input" |  tr '\n' ' '

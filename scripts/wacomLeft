@@ -1,0 +1,11 @@
+# script to map wacom pen area
+# c0 = touch_area_width / total_width
+# c2 = touch_area_height / total_height
+# c1 = touch_area_x_offset / total_width
+# c3 = touch_area_y_offset / total_height
+# [ c0 0  c1 ]
+# [ 0  c2 c3 ]
+# [ 0  0  1  ]
+
+xinput set-prop 'Wacom Bamboo Connect Pen stylus' --type=float "Coordinate Transformation Matrix" 0.415 0 0 0 1 0 0 0 1
+

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# show contents of a script
+[ $# -lt 1 ] && "Usarge : $0 <scriptname>" && exit 1
+[ -z $SCRIPTS ] && echo "SCRIPTS variable is not set." && exit 1
+scriptPath="$SCRIPTS/$1"
+[ ! -f "$scriptPath" ] && echo "Global script [$1] not found, in scripts folder[$SCRIPTS]." && exit 1
+cat $scriptPath
