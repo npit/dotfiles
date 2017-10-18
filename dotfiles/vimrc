@@ -1,6 +1,12 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
-set number
+" Line numbering and auto-toggling
+set number relativenumber
+:augroup numbertoggle
+:  autocmd!
+:  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+:  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+:augroup END
 
 call plug#begin('~/.vim/plugged')
 
@@ -17,7 +23,9 @@ Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'flazz/vim-colorschemes'
 Plug 'powerline/powerline', { 'rtp': 'powerline/bindings/vim' }
-
+Plug 'tpope/vim-surround'
+Plug 'nightsense/seagrey'
+Plug 'qualiabyte/vim-colorstepper'
 
 call plug#end()
 
@@ -42,7 +50,7 @@ au BufNewFile,BufRead *.py
     \ set tabstop=4 |
     \ set softtabstop=4 |
     \ set shiftwidth=4 |
-    \ set textwidth=79 |
+    \ set textwidth=80 |
     \ set expandtab |
     \ set autoindent |
     \ set fileformat=unix 
@@ -71,7 +79,7 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 syntax on
 
-colorscheme elflord
+colorscheme Benokai
 
 " Always display the powerline
 set laststatus=2
@@ -82,10 +90,6 @@ let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
 " Clipboard
 set clipboard=unnamed
-
-" map escape to caps lock
-au VimEnter * silent: !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape';
-au VimLeave * silent: !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock';
 
 " add addenda from youtube video : https://www.youtube.com/watch?v=XA2WjJbmmoM
 " provide tab-completion for all file-related tasks
@@ -105,3 +109,15 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+let g:syntastic_python_checkers=['python']
+
+" highlight search while typing
+set incsearch
+
+" Cycle themes
+nmap <F6> <Plug>ColorstepPrev
+nmap <F7> <Plug>ColorstepNext
+nmap <S-F7> <Plug>ColorstepReload
+" highlight cursor line
+set cursorline

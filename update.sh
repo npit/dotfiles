@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
-cp -v ~/.tmux.conf ~/.vimrc ./dotfiles/
+cat ~/.vimrc > ./dotfiles/vimrc
+cat ~/.tmux.conf > ./dotfiles/tmux.conf
 git add -u && git commit -m "Update dotfiles"
 git push -f origin master
