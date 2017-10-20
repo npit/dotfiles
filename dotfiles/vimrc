@@ -26,6 +26,9 @@ Plug 'powerline/powerline', { 'rtp': 'powerline/bindings/vim' }
 Plug 'tpope/vim-surround'
 Plug 'nightsense/seagrey'
 Plug 'qualiabyte/vim-colorstepper'
+Plug 'w0rp/ale'
+
+
 
 call plug#end()
 
@@ -50,7 +53,6 @@ au BufNewFile,BufRead *.py
     \ set tabstop=4 |
     \ set softtabstop=4 |
     \ set shiftwidth=4 |
-    \ set textwidth=80 |
     \ set expandtab |
     \ set autoindent |
     \ set fileformat=unix 
@@ -110,14 +112,32 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-let g:syntastic_python_checkers=['python']
+let g:syntastic_python_checkers=['python', 'pylint']
 
 " highlight search while typing
 set incsearch
 
 " Cycle themes
 nmap <F6> <Plug>ColorstepPrev
-nmap <F7> <Plug>ColorstepNext
-nmap <S-F7> <Plug>ColorstepReload
+nmap <F8> <Plug>ColorstepNext
+nmap <S-F8> <Plug>ColorstepReload
 " highlight cursor line
 set cursorline
+" kill the arrow keys
+nnoremap <up>    <nop>
+nnoremap <down>  <nop>
+nnoremap <left>  <nop>
+nnoremap <right> <nop>
+inoremap <up>    <nop>
+inoremap <down>  <nop>
+inoremap <left>  <nop>
+inoremap <right> <nop>
+" stop auto line breaking
+set textwidth=0
+set wrapmargin=0
+" toggle search hightlight
+nnoremap <F3> :set hlsearch!<CR>
+" open new buffers in tabs
+au BufAdd,BufNewFile * nested tab sball
+" linting with ale
+" check https://github.com/w0rp/ale
