@@ -13,7 +13,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tmhedberg/SimpylFold'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'Valloric/YouCompleteMe'
-Plug 'scrooloose/syntastic'
+" Plug 'scrooloose/syntastic'
 Plug 'nvie/vim-flake8'
 Plug 'jnurmine/Zenburn'
 Plug 'altercation/vim-colors-solarized'
@@ -27,6 +27,7 @@ Plug 'tpope/vim-surround'
 Plug 'nightsense/seagrey'
 Plug 'qualiabyte/vim-colorstepper'
 Plug 'w0rp/ale'
+Plug 'mtth/scratch.vim'
 
 
 
@@ -103,24 +104,24 @@ set wildmenu
 set hlsearch
 
 " syntastic options
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-let g:syntastic_python_checkers=['python', 'pylint']
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" 
+" let g:syntastic_python_checkers=['python', 'pylint']
 
 " highlight search while typing
 set incsearch
 
 " Cycle themes
-nmap <F6> <Plug>ColorstepPrev
-nmap <F8> <Plug>ColorstepNext
-nmap <S-F8> <Plug>ColorstepReload
+" nmap <F6> <Plug>ColorstepPrev
+" nmap <F8> <Plug>ColorstepNext
+" nmap <S-F8> <Plug>ColorstepReload
 " highlight cursor line
 set cursorline
 " kill the arrow keys
@@ -140,4 +141,6 @@ nnoremap <F3> :set hlsearch!<CR>
 " open new buffers in tabs
 au BufAdd,BufNewFile * nested tab sball
 " linting with ale
-" check https://github.com/w0rp/ale
+let g:ale_lint_on_enter = 0
+set completeopt-=preview
+
