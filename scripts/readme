@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # shortcut
 touch readme.txt
-$EDITOR readme.txt
+$TERM_EDITOR readme.txt

@@ -9,5 +9,5 @@ for arg in ${@}; do
 	echo "#!/usr/bin/env bash" > "$arg"
 	echo "" >> "$arg"
 	chmod +x "$arg"
-	$EDITOR "$arg"
+	$TERM_EDITOR "$arg"
 done

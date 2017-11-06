@@ -13,8 +13,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'tmhedberg/SimpylFold'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'Valloric/YouCompleteMe'
-" Plug 'scrooloose/syntastic'
-Plug 'nvie/vim-flake8'
 Plug 'jnurmine/Zenburn'
 Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree'
@@ -28,7 +26,8 @@ Plug 'nightsense/seagrey'
 Plug 'qualiabyte/vim-colorstepper'
 Plug 'w0rp/ale'
 Plug 'mtth/scratch.vim'
-
+Plug 'lervag/vimtex'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 
 call plug#end()
@@ -58,7 +57,7 @@ au BufNewFile,BufRead *.py
     \ set autoindent |
     \ set fileformat=unix 
 
-au BufNewFile,BufRead *.js,*.html,*.css
+au BufNewFile,BufRead *.js,*.html,*.css 
     \ set tabstop=2
     \ set softtabstop=2
     \ set shiftwidth=2
@@ -138,9 +137,37 @@ set textwidth=0
 set wrapmargin=0
 " toggle search hightlight
 nnoremap <F3> :set hlsearch!<CR>
-" open new buffers in tabs
-au BufAdd,BufNewFile * nested tab sball
+" open new buffers in tabs: this breaks YCM
+" au BufAdd,BufNewFile * nested tab sball
+
 " linting with ale
 let g:ale_lint_on_enter = 0
-set completeopt-=preview
+"set completeopt-=preview
+
+" automatically set paste mode. handle tmux cases too
+" ---------------------------------------------------
+function! WrapForTmux(s)
+  if !exists('$TMUX')
+    return a:s
+  endif
+
+  let tmux_start = "\<Esc>Ptmux;"
+  let tmux_end = "\<Esc>\\"
+
+  return tmux_start . substitute(a:s, "\<Esc>", "\<Esc>\<Esc>", 'g') . tmux_end
+endfunction
+
+let &t_SI .= WrapForTmux("\<Esc>[?2004h")
+let &t_EI .= WrapForTmux("\<Esc>[?2004l")
+
+function! XTermPasteBegin()
+  set pastetoggle=<Esc>[201~
+  set paste
+  return ""
+endfunction
+
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+" ---------------------------------------------------
+let g:vimtex_compiler_latexmk = {'callback' : 0}
+let g:vimtex_view_method = 'zathura'
 
