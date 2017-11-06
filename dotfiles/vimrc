@@ -142,7 +142,6 @@ nnoremap <F3> :set hlsearch!<CR>
 
 " linting with ale
 let g:ale_lint_on_enter = 0
-"set completeopt-=preview
 
 " automatically set paste mode. handle tmux cases too
 " ---------------------------------------------------
@@ -170,4 +169,5 @@ inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 " ---------------------------------------------------
 let g:vimtex_compiler_latexmk = {'callback' : 0}
 let g:vimtex_view_method = 'zathura'
+set completeopt-=preview
 
