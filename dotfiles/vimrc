@@ -28,6 +28,8 @@ Plug 'w0rp/ale'
 Plug 'mtth/scratch.vim'
 Plug 'lervag/vimtex'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-repeat'
 
 
 call plug#end()
@@ -81,7 +83,10 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 syntax on
 
-colorscheme Benokai
+" colorscheme Revolution
+colorscheme antares
+" colorscheme Tommorow-Night-Bright
+" colorscheme Tommorow-Night-Eighties
 
 " Always display the powerline
 set laststatus=2
@@ -142,6 +147,8 @@ nnoremap <F3> :set hlsearch!<CR>
 
 " linting with ale
 let g:ale_lint_on_enter = 0
+let g:ale_lint_on_text_changed = 'never'
+"set completeopt-=preview
 
 " automatically set paste mode. handle tmux cases too
 " ---------------------------------------------------
@@ -169,5 +176,6 @@ inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 " ---------------------------------------------------
 let g:vimtex_compiler_latexmk = {'callback' : 0}
 let g:vimtex_view_method = 'zathura'
-set completeopt-=preview
 
+" fzf
+imap <c-x><c-l> <plug>(fzf-complete-line)
