@@ -2,6 +2,8 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 " Line numbering and auto-toggling
 set number relativenumber
+" leader key
+let mapleader=","
 :augroup numbertoggle
 :  autocmd!
 :  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
@@ -30,7 +32,7 @@ Plug 'lervag/vimtex'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-repeat'
-
+Plug 'scrooloose/nerdcommenter'
 
 call plug#end()
 
@@ -71,6 +73,10 @@ au BufNewFile,BufRead *.yml,*.yaml
 
 set encoding=utf-8
 let g:ycm_autoclose_preview_window_after_completion=1
+if !exists('g:ycm_semantic_triggers')                                                                                                                                                  
+     let g:ycm_semantic_triggers = {}  
+endif                                                                                                                                                                                  
+let g:ycm_semantic_triggers.tex = g:vimtex#re#youcompleteme 
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 "python with virtualenv support
@@ -183,7 +189,9 @@ endfunction
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 " ---------------------------------------------------
 let g:vimtex_compiler_latexmk = {'callback' : 0}
-let g:vimtex_view_method = 'zathura'
+" let g:vimtex_view_method = 'zathura'
 
 " fzf
 imap <c-x><c-l> <plug>(fzf-complete-line)
+" nerdtree
+map <C-J> :NERDTreeToggle<CR>

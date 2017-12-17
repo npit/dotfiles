@@ -1,10 +1,5 @@
 #!/usr/bin/env bash
 # source the dot profile files
-echo "Pofile:"
-cat ~/.profile
+cat $CONFIG/startup.sh
+source $CONFIG/startup.sh
 
-echo  "Sourcing.."
-source ~/.profile
-
-echo "done!"
-echo
