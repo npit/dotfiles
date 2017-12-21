@@ -33,12 +33,16 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-repeat'
 Plug 'scrooloose/nerdcommenter'
+Plug 'rking/ag.vim'
+Plug 'easymotion/vim-easymotion'
 
 call plug#end()
 
 set splitbelow
 set splitright
 
+"ag settings
+let g:ag_working_path_mode="r"
 "split navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
