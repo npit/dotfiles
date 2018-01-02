@@ -39,6 +39,11 @@ Plug 'vim-voom/VOoM'
 
 call plug#end()
 
+" greek 
+set keymap=greek_utf-8
+set iminsert=0
+set imsearch=-1
+
 set splitbelow
 set splitright
 

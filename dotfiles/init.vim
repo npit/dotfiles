@@ -55,6 +55,11 @@ call plug#end()
 set splitbelow
 set splitright
 
+" greek: change insert model lang with C-6
+set keymap=greek_utf-8
+set iminsert=0
+set imsearch=-1
+
 """ neovim stuff
 " async completion
 let g:deoplete#enable_at_startup = 1
