@@ -15,14 +15,14 @@ let mapleader=","
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'tmhedberg/SimpylFold'
+"Plug 'tmhedberg/SimpylFold'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'Valloric/YouCompleteMe'
 Plug 'jnurmine/Zenburn'
 Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
-Plug 'kien/ctrlp.vim'
+" Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'flazz/vim-colorschemes'
 " airline plugins
@@ -35,8 +35,8 @@ Plug 'https://github.com/plasticboy/vim-markdown.git'
 " Plug 'powerline/powerline', { 'rtp': 'powerline/bindings/vim' }
 Plug 'tpope/vim-surround'
 Plug 'nightsense/seagrey'
-Plug 'qualiabyte/vim-colorstepper'
-Plug 'w0rp/ale'
+" Plug 'qualiabyte/vim-colorstepper'
+" Plug 'w0rp/ale'
 Plug 'mtth/scratch.vim'
 Plug 'lervag/vimtex'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -46,6 +46,8 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'rking/ag.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'vim-voom/VOoM'
+
+Plug 'neomake/neomake'
 
 " deoplete
 Plug 'zchee/deoplete-jedi',
@@ -180,18 +182,6 @@ set wildmenu
 " hightlight search matches
 set hlsearch
 
-" syntastic options
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
-" 
-" let g:syntastic_python_checkers=['python', 'pylint']
-
 " highlight search while typing
 set incsearch
 
@@ -219,11 +209,11 @@ nnoremap <F3> :set hlsearch!<CR>
 " au BufAdd,BufNewFile * nested tab sball
 
 " linting with ale
-let g:ale_lint_on_enter = 0
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_sign_error = '>>'
-let g:ale_sign_warning = '--'
-let g:ale_set_highlights = 0
+" let g:ale_lint_on_enter = 0
+" let g:ale_lint_on_text_changed = 'never'
+" let g:ale_sign_error = '>>'
+" let g:ale_sign_warning = '--'
+" let g:ale_set_highlights = 0
 "set completeopt-=preview
 
 " automatically set paste mode. handle tmux cases too
@@ -257,3 +247,4 @@ let g:vimtex_compiler_latexmk = {'callback' : 0}
 imap <c-x><c-l> <plug>(fzf-complete-line)
 " nerdtree
 map <C-J> :NERDTreeToggle<CR>
+source ~/.config/nvim/leaders.vim

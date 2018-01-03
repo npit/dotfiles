@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # source the dot profile files
 cat $CONFIG/startup.sh
-source $CONFIG/startup.sh
+export source $CONFIG/startup.sh
 
