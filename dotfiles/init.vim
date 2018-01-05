@@ -1,12 +1,13 @@
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
-" source ~/.vimrc
 
 filetype off                  " required
 " Line numbering and auto-toggling
 set number relativenumber
 " leader key
 let mapleader=","
+let maplocalleader="\<tab>"
+
 :augroup numbertoggle
 :  autocmd!
 :  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
@@ -113,10 +114,10 @@ map <SPACE> <Plug>(easymotion-prefix)
 "ag settings
 let g:ag_working_path_mode="r"
 "split navigations
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+nnoremap <A-J> <C-W><C-J>
+nnoremap <A-K> <C-W><C-K>
+nnoremap <A-L> <C-W><C-L>
+nnoremap <A-H> <C-W><C-H>
 
 " Enable folding
 set foldmethod=indent
@@ -246,5 +247,5 @@ let g:vimtex_compiler_latexmk = {'callback' : 0}
 " fzf
 imap <c-x><c-l> <plug>(fzf-complete-line)
 " nerdtree
-map <C-J> :NERDTreeToggle<CR>
-source ~/.config/nvim/leaders.vim
+map <C-J> ;NERDTreeToggle<CR>
+source ~/.config/nvim/mappings.vim
