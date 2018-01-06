@@ -160,7 +160,7 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 syntax on
 
 " colorscheme Revolution
-colorscheme antares
+colorscheme alduin
 " colorscheme Tommorow-Night-Bright
 " colorscheme Tommorow-Night-Eighties
 

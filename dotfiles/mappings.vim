@@ -5,10 +5,10 @@ nnoremap Y y$
 nnoremap : ;
 nnoremap ; :
 " paste toggle
-"set pastetoggle=<F2>
+set pastetoggle=<F2>
 " generic leader bindings (g)
 " fzf
-"map <Leader>gf :FZF 
+map <Leader>gf :FZF 
 
 " latex leader bindings (tx)
 " tables
@@ -23,9 +23,9 @@ map <Leader>txi o\begin{itemize}<CR><CR>\end{itemize}<CR><ESC>kki\item
 "
 " python
 " window navigation with shift
-map <S-h> <C-W><C-h>
-map <S-j> <C-W><C-j>
-map <S-k> <C-W><C-k>
-map <S-l> <C-W><C-l>
-"map <S-q> <C-W>q
+map <LocalLeader>h <C-W><C-h>
+map <LocalLeader>j <C-W><C-j>
+map <LocalLeader>k <C-W><C-k>
+map <LocalLeader>l <C-W><C-l>
+map <LocalLeader>q <C-W>q
 
