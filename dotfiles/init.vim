@@ -16,7 +16,7 @@ let maplocalleader="\<tab>"
 
 call plug#begin('~/.vim/plugged')
 
-"Plug 'tmhedberg/SimpylFold'
+Plug 'tmhedberg/SimpylFold'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'Valloric/YouCompleteMe'
 Plug 'jnurmine/Zenburn'
@@ -64,6 +64,8 @@ set iminsert=0
 set imsearch=-1
 
 """ neovim stuff
+" clipboard
+set clipboard+=unnamedplus
 " async completion
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#sources#jedi#show_docstring = 1
@@ -159,8 +161,8 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 syntax on
 
-" colorscheme Revolution
-colorscheme alduin
+colorscheme Revolution
+" colorscheme alduin
 " colorscheme Tommorow-Night-Bright
 " colorscheme Tommorow-Night-Eighties
 
@@ -242,7 +244,7 @@ endfunction
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 " ---------------------------------------------------
 let g:vimtex_compiler_latexmk = {'callback' : 0}
-" let g:vimtex_view_method = 'zathura'
+" let g:vimtex_view_method = 'okular'
 
 " fzf
 imap <c-x><c-l> <plug>(fzf-complete-line)

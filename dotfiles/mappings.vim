@@ -1,25 +1,33 @@
 " generic mappings
+" copy to system clip
+map <Leader>gy "+y
+map <Leader>gY "+Y
+
 "  yank to eol
 nnoremap Y y$
 " single key command mode
 nnoremap : ;
 nnoremap ; :
+"
 " paste toggle
 set pastetoggle=<F2>
 " generic leader bindings (g)
 " fzf
 map <Leader>gf :FZF 
 
-" latex leader bindings (tx)
+" latex leader bindings, prefix: t
 " tables
-map <Leader>txt o\begin{table}<CR>\centering<CR>\begin{tabular}{cc}\toprule \\ <CR>cat & dog \\ \midrule one & two \\ \bottomrule <CR>\end{tabular}\caption{The caption}\label{table:}\end{table}<CR>
+map <Leader>tt o\begin{table}<CR>\centering<CR>\begin{tabular}{cc}\toprule \\ <CR>cat & dog \\ \midrule one & two \\ \bottomrule <CR>\end{tabular}\caption{The caption}\label{table:}\end{table}<CR>
 " eqn
-map <Leader>txe o\begin{equation}<CR>\label{eqn:}<CR>\end{equation}<ESC>kO
+map <Leader>te o\begin{equation}<CR>\label{eqn:}<CR>\end{equation}<ESC>kO
 " let @t= 'i\begin{table}<CR>\centering<CR>\end{table}<CR>'
 " figures
-map <Leader>txf o\begin{figure}<CR>\centering<CR>\includegraphics[scale=1]{}<CR>\end{figure}<CR>
+map <Leader>tf o\begin{figure}<CR>\centering<CR>\includegraphics[scale=1]{}<CR>\end{figure}<CR>
 " itemization
-map <Leader>txi o\begin{itemize}<CR><CR>\end{itemize}<CR><ESC>kki\item 
+map <Leader>ti o\begin{itemize}<CR><CR>\end{itemize}<CR><ESC>kki\item 
+" bold vector
+map <Leader>tbv i\bm{}<ESC>i
+
 "
 " python
 " window navigation with shift
