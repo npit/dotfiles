@@ -115,7 +115,8 @@ source $CONFIG/aliases
 
 # TMUX
 # if not inside a tmux session, and if no session is started, start a new session
-if hash tmux 2>/dev/null && [ -z "$TMUX" ]; then
+if hash tmux 2>/dev/null && [ -z "$TMUX" ] && [ ! "${TERM}" = "eterm-color" ] && [ ! "${TERM}" = "eterm" ] ; then
+    echo "Starting tmux in TERM:$TERM"
     if [ $(tmux list-sessions | grep -c '(attached)') = 0 ]; then  # either no sessions or no attached sessions
         if ! tmux attach; then  # nothing to attach to - start a new session
             tmux new-session
