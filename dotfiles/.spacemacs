@@ -357,6 +357,7 @@ you should place your code here."
   (setq TeX-save-query nil) ;;autosave before compiling
 
   ;; agenda
+  (setq org-agenda-window-setup 'current-window)
   (setq org-agenda-start-day "-1d")
   (setq org-agenda-span 14)
   (setq org-agenda-start-on-weekday nil)

@@ -18,6 +18,6 @@ let g:bufferline_inactive_highlight = 'airline_c'
 let g:indentLine_char = '⇥'     " alt ┋ ┆ ┊ │  ⁝ ⁞ ⋮ ⇥
 let g:indentLine_color_gui = 'gray'
 let g:indentLine_concealcursor = 1
-"let g:indentLine_leadingSpaceEnabled = 1
+let g:indentLine_leadingSpaceEnabled = 1
 "let g:indentLine_setColors = 0
 "let g:indentLine_conceallevel =  0

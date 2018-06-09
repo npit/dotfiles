@@ -1,7 +1,13 @@
 #!/usr/bin/env bash
 
-cat ~/.vimrc > ./dotfiles/vimrc
+# VIM
+# comment out because spacevim
+#cat ~/.vimrc > ./dotfiles/vimrc
+#cp ~/.config/nvim/* ./dotfiles/
+
+# TMUX
 cat ~/.tmux.conf > ./dotfiles/tmux.conf
-cp ~/.config/nvim/* ./dotfiles/
+
+# SPACEMACS
 cp ~/.spacemacs ./dotfiles/
 
