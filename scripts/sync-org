@@ -6,4 +6,5 @@ rclone copy /home/nik/life.org dbox:/org/
 rclone copy /home/nik/notes.org dbox:/org/
 rclone copy /home/nik/work/iit/work.org dbox:/org/
 rclone copy /home/nik/work/iit/phd/phd.org dbox:/org/
+rclone copy /home/nik/work/iit/phd/collabs/biorepr/bio.org dbox:/org/
 rclone copy /home/nik/org/capture.org dbox:/org/

@@ -3,4 +3,5 @@
 cat ~/.vimrc > ./dotfiles/vimrc
 cat ~/.tmux.conf > ./dotfiles/tmux.conf
 cp ~/.config/nvim/* ./dotfiles/
+cp ~/.spacemacs ./dotfiles/
 
