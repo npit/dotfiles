@@ -152,8 +152,8 @@ values."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(
-                         tsdh-dark
                          dorsey
+                         tsdh-dark
                          afternoon
                          gotham
                          )
@@ -365,7 +365,6 @@ you should place your code here."
 
   (with-eval-after-load 'org
     ;; here goes your Org config :)
-  
     ;; agenda at startup
     ;; (org-agenda-list)
     ;; (switch-to-buffer "*Org Agenda*")
@@ -570,7 +569,7 @@ you should place your code here."
 %U
 %a
 "))))
- '(org-default-notes-file "~/capture.org")
+ '(org-default-notes-file "~/org/notes.org")
  '(org-export-backends (quote (ascii beamer html icalendar latex md odt)))
  '(package-selected-packages
    (quote
@@ -583,3 +582,58 @@ you should place your code here."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:background nil)))))
+(defun dotspacemacs/emacs-custom-settings ()
+  "Emacs custom settings.
+This is an auto-generated function, do not modify its content directly, use
+Emacs customize menu instead.
+This function is called at the very end of Spacemacs initialization."
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default-input-method "greek")
+ '(evil-escape-delay 0.0)
+ '(evil-want-Y-yank-to-eol nil)
+ '(org-agenda-files
+   (quote
+    ("/home/nik/uoa/msc-thesis/implementation/experiments/plannning/msc.org" "/home/nik/work/iit/work.org" "/home/nik/work/iit/phd/phd.org" "/home/nik/life.org")))
+ '(org-capture-templates
+   (quote
+    (("w" "Work Templates")
+     ("p" "Personal Templates")
+     ("pt" "todo" entry
+      (file+headline org-default-notes-file "Personal")
+      (file "~/org/templates/todo.tpl"))
+     ("pl" "look into" entry
+      (file+headline org-default-notes-file "Look into")
+      (file "~/org/templates/todo.tpl"))
+     ("wm" "MSc-related" entry
+      (file+headline org-default-notes-file "MSc")
+      (file "~/org/templates/todo.tpl"))
+     ("wp" "PhD-related" entry
+      (file+headline org-default-notes-file "PhD")
+      (file "~/org/templates/todo.tpl"))
+     ("wi" "IIT/NCSR business" entry
+      (file+headline org-default-notes-file "Work-related")
+      (file "~/org/templates/todo.tpl"))
+     ("n" "note" entry
+      (file+headline org-default-notes-file "Notes")
+      "* %? :NOTE:
+%U
+%a
+"))))
+ '(org-default-notes-file "~/capture.org")
+ '(org-export-backends (quote (ascii beamer html icalendar latex md odt)))
+ '(package-selected-packages
+   (quote
+    (symon string-inflection realgud test-simple loc-changes load-relative password-generator overseer org-brain nameless mvn meghanada maven-test-mode impatient-mode helm-purpose window-purpose groovy-mode groovy-imports pcache gradle-mode google-c-style evil-org evil-lion evil-cleverparens paredit ensime sbt-mode scala-mode editorconfig cmake-ide levenshtein pdf-tools tablist imenu-list cargo toml-mode racer flycheck-rust rust-mode smeargle orgit magit-gitflow helm-gitignore gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link evil-magit magit magit-popup git-commit ghub let-alist with-editor ranger disaster company-c-headers cmake-mode clang-format railcasts-theme unfill mwim white-sand-theme rebecca-theme org-mime exotica-theme zenburn-theme zen-and-art-theme underwater-theme ujelly-theme twilight-theme twilight-bright-theme twilight-anti-bright-theme toxi-theme tao-theme tangotango-theme tango-plus-theme tango-2-theme sunny-day-theme sublime-themes subatomic256-theme subatomic-theme spacegray-theme soothe-theme solarized-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme seti-theme reverse-theme railscasts-theme purple-haze-theme professional-theme planet-theme phoenix-dark-pink-theme phoenix-dark-mono-theme organic-green-theme omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme naquadah-theme mustang-theme monokai-theme monochrome-theme molokai-theme moe-theme minimal-theme material-theme majapahit-theme madhat2r-theme lush-theme light-soap-theme jbeans-theme jazz-theme ir-black-theme inkpot-theme heroku-theme hemisu-theme hc-zenburn-theme gruvbox-theme gruber-darker-theme grandshell-theme gotham-theme gandalf-theme flatui-theme flatland-theme farmhouse-theme espresso-theme dracula-theme django-theme darktooth-theme autothemer darkokai-theme darkmine-theme darkburn-theme dakrone-theme cyberpunk-theme color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized clues-theme cherry-blossom-theme busybee-theme bubbleberry-theme birds-of-paradise-plus-theme badwolf-theme apropospriate-theme anti-zenburn-theme ample-zen-theme ample-theme alect-themes afternoon-theme company-emacs-eclim eclim web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc company-tern tern coffee-mode csv-mode yaml-mode mu4e-maildirs-extension mu4e-alert ht flyspell-correct-helm flyspell-correct auto-dictionary flycheck-pos-tip pos-tip flycheck xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help org-pomodoro helm-c-yasnippet company-auctex auto-yasnippet helm-company fuzzy company-web web-completion-data company-statistics company-anaconda company yasnippet ac-ispell auto-complete org-projectile org-category-capture org-present alert log4e gntp org-download htmlize gnuplot auctex-latexmk auctex web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode mmm-mode markdown-toc markdown-mode gh-md yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode dash-functional helm-pydoc cython-mode anaconda-mode pythonic ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async)))
+ '(paradox-github-token t)
+ '(send-mail-function (quote mailclient-send-it)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+)
