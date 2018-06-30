@@ -1,10 +1,18 @@
 #!/usr/bin/env bash
 
-rclone copy /home/nik/capture.org dbox:/org/
+echo "/home/nik/org/capture.org dbox:/org/"
+rclone copy /home/nik/org/capture.org dbox:/org/
+echo "/home/nik/exercise.org dbox:/org/"
 rclone copy /home/nik/exercise.org dbox:/org/
+echo "/home/nik/life.org dbox:/org/"
 rclone copy /home/nik/life.org dbox:/org/
+echo "/home/nik/notes.org dbox:/org/"
 rclone copy /home/nik/notes.org dbox:/org/
+echo "/home/nik/work/iit/work.org dbox:/org/"
 rclone copy /home/nik/work/iit/work.org dbox:/org/
+echo "/home/nik/work/iit/phd/phd.org dbox:/org/"
 rclone copy /home/nik/work/iit/phd/phd.org dbox:/org/
+echo "/home/nik/work/iit/phd/collabs/biorepr/bio.org dbox:/org/"
 rclone copy /home/nik/work/iit/phd/collabs/biorepr/bio.org dbox:/org/
+echo "/home/nik/org/capture.org dbox:/org/"
 rclone copy /home/nik/org/capture.org dbox:/org/
