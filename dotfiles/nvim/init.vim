@@ -8,6 +8,13 @@ set number relativenumber
 let mapleader=","
 let maplocalleader="\<tab>"
 
+
+"python with virtualenv support
+let g:python_host_prog = '/usr/bin/python'
+let python_highlight_all=1
+highlight BadWhitespace ctermbg=darkgreen guibg=darkgreen
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
 :augroup numbertoggle
 :  autocmd!
 :  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
@@ -98,7 +105,6 @@ let g:NERDTreeDirArrowExpandable = ''
 let g:NERDTreeDirArrowCollapsible = ''
 let g:vim_markdown_folding_disabled = 1
 let g:SuperTabClosePreviewOnPopupClose = 1
-let python_highlight_all = 1
 let g:bufferline_rotate = 1
 let g:bufferline_modified = ' ✻'
 
@@ -153,11 +159,6 @@ endif
 let g:ycm_semantic_triggers.tex = g:vimtex#re#youcompleteme 
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
-"python with virtualenv support
-let g:python_host_prog = '/usr/bin/python3'
-let python_highlight_all=1
-highlight BadWhitespace ctermbg=darkgreen guibg=darkgreen
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 syntax on
 

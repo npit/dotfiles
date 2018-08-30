@@ -1,13 +1,16 @@
 #!/usr/bin/env bash
 
 # VIM
-# comment out because spacevim
-#cat ~/.vimrc > ./dotfiles/vimrc
-#cp ~/.config/nvim/* ./dotfiles/
+mkdir -p ./dotfiles/nvim/
+cp ~/.config/nvim/* ./dotfiles/nvim/
 
 # TMUX
 cat ~/.tmux.conf > ./dotfiles/tmux.conf
 
 # SPACEMACS
-cp ~/.spacemacs ./dotfiles/
+cp ~/.spacemacs ./dotfiles/spacemacs.develop
 
+# FISH
+mkdir -p ./dotfiles/fish/
+cp ~/.config/fish/config.fish ./dotfiles/fish/
+cp -r ~/.config/fish/functions/ ./dotfiles/fish/
