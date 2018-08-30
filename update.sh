@@ -9,6 +9,7 @@ cat ~/.tmux.conf > ./dotfiles/tmux.conf
 
 # SPACEMACS
 cp ~/.spacemacs ./dotfiles/spacemacs.develop
+cp ~/spacemacs.org ./
 
 # FISH
 mkdir -p ./dotfiles/fish/

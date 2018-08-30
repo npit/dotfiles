@@ -517,8 +517,6 @@ before packages are loaded."
 
   ;; latex save when compile autobuild
   (setq TeX-save-query nil) ;;autosave before compiling
-  ; autobuild
-  (setq org-latex-pdf-process (quote ("texi2dvi --pdf --clean --verbose--batch %f" "bibtex %b" "texi2dvi --pdf --clean --verbose --batch %f""texi2dvi --pdf --clean --verbose --batch %f")))
 
   ;; org ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   (with-eval-after-load 'org

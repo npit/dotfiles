@@ -1,0 +1,78 @@
+ Spacemacs cheatsheet
+* Files:
+ open file: `f f`
+ save file: `f s`
+ open dotfile: `f e d`
+ open dotfile: `f e r`
+* Projects: p
+ list recent projects: `p p`
+
+* Buffers: b
+ latest buffer: `SPC TAB` (explicit shortcut)
+ buffer menu: `b`
+ close buffer: `d`
+
+* Windows: w
+ split window : `- /`
+ move to split: `S hjkl HJKL`
+ golden ratio: `t g`
+
+* Workspaces
+- Start/goto a workspace: SPC l  w <num>
+- Cycle workspaces forwards: gt
+- Cycle workspaces backwards: gT
+
+* Dired
+- Copy / move / delete file`Shift C / R / D` 
+- Edit file : `ENTER`
+- Paste from clipboard `C y'
+- cheatsheet [https://www.gnu.org/software/emacs/refcards/pdf/dired-ref.pdf][here]
+
+
+** Themes: T
+- Toggle: `n`
+-  List: `s`
+
+** Toggling: t
+- line numbers: `n`
+
+** mu4e: a M
+- Follow link: `M RET`
+- Reply/Forward/Compose: `R/F/C`
+
+** Org: m (major mode)
+- Archive subtree: `A`
+- Checkbox:
+
+* org
+** things to do [/] [%] 
+- [ ] thing 1
+- [ ] thing 2
+- [ ] thing 3
+- [ ] thing 4
+
+** Edit subtree in its own buffer: 
+`SPC m b`
+** Recompute day name in scheduled / deadline:
+`C-c C-c`
+* Macros
+- Start defining C-x (
+- Stop defining C-x )
+- Execute: C-x e or F4
+* Misc:
+- Paste from clipboard `C y'
+- neotree (nerdtree-like) ``SPC f t''
+- In terminal, cycle through history with `C-j, C-k'
+- If colors are not right, make sure TERM is set to sth like xterm-256color
+- To auto-detect latex engine, put at end of .tex:
+ 
+- `,' is a shortcut for `SPC-m' (major mode), like the vim leader
+- C-\ to change language without messing up normal mode navigation
+- SPC-b-i to show awesome outliner sidebar
+- C-h v <variablename> to see possible variable values
+* Programming:
+- refactor variable: `SPC s e`
+* Python:
+- Execute: `SPC c c`
+
+
