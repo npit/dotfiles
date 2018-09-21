@@ -7,5 +7,5 @@
 # [ 0  c2 c3 ]
 # [ 0  0  1  ]
 
-xinput set-prop 'Wacom Bamboo Connect Pen stylus' --type=float "Coordinate Transformation Matrix" 0.415 0 0 0 1 0 0 0 1
+xinput set-prop 'Wacom Bamboo Connect Pen stylus' --type=float "Coordinate Transformation Matrix" 0.586 0 0 0 1 0 0 0 1
 
