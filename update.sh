@@ -15,3 +15,7 @@ cp ~/spacemacs.org ./
 mkdir -p ./dotfiles/fish/
 cp ~/.config/fish/config.fish ./dotfiles/fish/
 cp -r ~/.config/fish/functions/ ./dotfiles/fish/
+
+# ZSH
+mkdir -p ./dotfiles/zsh/
+cp ~/.zshrc ./dotfiles/zshrc

@@ -35,4 +35,4 @@ set -g fish_prompt_pwd_dir_length 0
 set -g theme_project_dir_length 1
 
 source $CONFIG/aliases.fish
-#set -g theme_newline_cursor yes
+echo "Offlineimap config to gitlab"

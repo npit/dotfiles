@@ -5,7 +5,7 @@ map <Leader>gY "+Y
 
 "  yank to eol
 nnoremap Y y$
-" single key command mode
+" single key command mod
 nnoremap : ;
 nnoremap ; :
 "
