@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+ssh -D 8080 work
+chromium --proxy-server="socks5://localhost:8080"
+

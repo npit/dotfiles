@@ -77,7 +77,10 @@ This function should only modify configuration layer settings."
 
       (mu4e :variables
             mu4e-installation-path "/usr/share/emacs/site-lisp"
-            mu4e-enable-notifications t)
+            mu4e-enable-notifications t
+            mu4e-headers-auto-update t
+            mu4e-update-interval 60
+            )
      )
 
    ;; List of additional packages that will be installed without being
@@ -210,9 +213,8 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
-                         spacemacs-light
-                         alect-dark
+   dotspacemacs-themes '(
+                         kaolin-dark
                          tsdh-dark
                          gotham
                          omtose-darker
@@ -237,7 +239,7 @@ It should only modify the values of Spacemacs settings."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 13
+                               :size 15
                                :weight normal
                                :width normal)
 
@@ -488,6 +490,10 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
   ;; general ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ; disable smartparens
+  (spacemacs/toggle-smartparens-globally-off)
+  ; increase fill column
+  (setq fill-column 100)
   ; modeline theme
   (setq dotspacemacs-mode-line-theme 'spacemacs)
   ;; full file path on statusline

@@ -1,9 +1,10 @@
  Spacemacs cheatsheet
-* Files:
- open file: `f f`
- save file: `f s`
- open dotfile: `f e d`
- open dotfile: `f e r`
+* Files: f
+ open file: `f`
+ save file: `s`
+ open dotfile: `e d`
+ open dotfile: `e r`
+ copy path of file in current buffer: `y`
 * Projects: p
  list recent projects: `p p`
 
