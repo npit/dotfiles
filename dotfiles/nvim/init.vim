@@ -250,3 +250,6 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 " nerdtree
 map <C-J> ;NERDTreeToggle<CR>
 source ~/.config/nvim/mappings.vim
+
+" live updates
+set inccommand=split

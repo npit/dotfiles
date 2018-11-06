@@ -70,6 +70,7 @@ plugins=(git colored-man-pages tmux zsh-autosuggestions)
 # export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
+export PATH="/home/nik/Software/bin/:$PATH"
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
@@ -121,17 +122,17 @@ source $CONFIG/aliases
 
 
 # TMUX
-# if not inside a tmux session, and if no session is started, start a new session
-# if hash tmux 2>/dev/null && [ -z "$TMUX" ] && [ ! "${TERM}" = "eterm-color" ] && [ ! "${TERM}" = "eterm" ] ; then
-#     if [ $(tmux list-sessions | grep -c '(attached)') = 0 ]; then  # either no sessions or no attached sessions
-#         if ! tmux attach; then  # nothing to attach to - start a new session
-#             tmux new-session
-#         fi
-#     else
-#         # already attached elsewhere, list sessions
-#         #echo "Existing tmux sessions (attached elsewhere):"
-#         #tmux list-sessions
-#         tmux new-session
-#     fi
-# fi
+if not inside a tmux session, and if no session is started, start a new session
+if hash tmux 2>/dev/null && [ -z "$TMUX" ] && [ ! "${TERM}" = "eterm-color" ] && [ ! "${TERM}" = "eterm" ] ; then
+    if [ $(tmux list-sessions | grep -c '(attached)') = 0 ]; then  # either no sessions or no attached sessions
+        if ! tmux attach; then  # nothing to attach to - start a new session
+            tmux new-session
+        fi
+    else
+        # already attached elsewhere, list sessions
+        #echo "Existing tmux sessions (attached elsewhere):"
+        #tmux list-sessions
+        tmux new-session
+    fi
+fi
 
