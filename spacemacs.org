@@ -30,31 +30,28 @@
 - cheatsheet [https://www.gnu.org/software/emacs/refcards/pdf/dired-ref.pdf][here]
 
 
-** Themes: T
+* Themes: T
 - Toggle: `n`
 -  List: `s`
 
-** Toggling: t
+* Toggling: t
 - line numbers: `n`
 
-** mu4e: a M
+* mu4e: a M
 - Follow link: `M RET`
 - Reply/Forward/Compose: `R/F/C`
 
-** Org: m (major mode)
+* Org: m (major mode)
 - Archive subtree: `A`
-- Checkbox:
-
-* org
-** things to do [/] [%] 
-- [ ] thing 1
-- [ ] thing 2
-- [ ] thing 3
-- [ ] thing 4
-
-** Edit subtree in its own buffer: 
-`SPC m b`
-** Recompute day name in scheduled / deadline:
+- things to do [/] [%] 
+-[ ] thing 1
+-[ ] thing 2
+-[ ] thing 3
+-[ ] thing 4
+-
+- Edit subtree in its own buffer: 
+-PC m b`
+- Recompute day name in scheduled / deadline:
 `C-c C-c`
 * Macros
 - Start defining C-x (

@@ -23,7 +23,7 @@ with open(filepath, "rb") as f:
 try:
     print("{} data.".format(len(data)))
     for i, d in enumerate(data):
-        print(i+1,"type:", type(d))
+        print(i+1,"type:", type(d), "len:", len(d))
 except:
     print("No iterable data.")
     print("type:", type(data))
