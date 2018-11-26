@@ -6,8 +6,12 @@
  open dotfile: `e r`
  copy path of file in current buffer: `y`
 * Projects: p
- list recent projects: `p p`
+ list recent projects: p
+ project-wide interactive replace: R
 
+* Search: 
+  search for a pattern, list all results in buffer: SPC s d
+  
 * Buffers: b
  latest buffer: `SPC TAB` (explicit shortcut)
  buffer menu: `b`
@@ -23,13 +27,17 @@
 - Cycle workspaces forwards: gt
 - Cycle workspaces backwards: gT
 
-* Dired
+* Dired: a d
 - Copy / move / delete file`Shift C / R / D` 
 - Edit file : `ENTER`
 - Paste from clipboard `C y'
 - cheatsheet [https://www.gnu.org/software/emacs/refcards/pdf/dired-ref.pdf][here]
 
-
+* Ranger: a r
+- mark: TAB
+- delete: D
+- copy/cut/paste: yy/dd/pp
+ 
 * Themes: T
 - Toggle: `n`
 -  List: `s`
