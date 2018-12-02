@@ -4,14 +4,30 @@ import clipboard
 from os.path import expanduser, join, exists, isfile, dirname
 from os import makedirs
 
+import bibtexparser
+from bibtexparser.bparser import BibTexParser
 
+initialized = False
+copied_data = clipboard.paste()
 conf = {}
-conf_filepath = join(expanduser("~"), ".config", "addbib.json")
+conf_filepath = join(expanduser("~"), ".config","addbib", "config.json")
+
+def get_id(content):
+    try:
+        # write to a temp file
+        parser = BibTexParser()
+        content = bibtexparser.loads(content)
+        b_id = content.entries[0]["ID"]
+        clipboard.copy(b_id)
+        print("Copied citation id: [{}] to clipboard.".format(b_id))
+    except:
+        print("Failed to parse citation key.")
 
 # check for existence of config file
 if not exists(conf_filepath):
-    print("Configuration file {} does not exist, creating.")
-    bib_filepath = input("Give path to bibliography file:")
+    initialized = True
+    print("Configuration file {} does not exist, creating.".format(conf_filepath))
+    bib_filepath = input("Give path to bibliography file (you can copy/paste): ")
     if not exists(bib_filepath):
         print("Specified path does not exist.")
         exit(1)
@@ -33,10 +49,23 @@ else:
         conf = json.load(f)
         bib_filepath = conf["bib_path"]
 
+print("Library:", bib_filepath)
+
 if not exists(bib_filepath):
     print("Warning: bib file is empty.")
+
 with open(bib_filepath, "a") as f:
-    copied_bib = clipboard.paste()
+    print("Adding content to library:")
+    print("------------------------")
+    print(copied_data)
+    print("------------------------")
+    if initialized:
+        res = input("Continue? Y/n")
+        if res.lower() == "n":
+            print("Aborting.")
+            exit(1)
     f.write("\n")
-    f.write(copied_bib)
+    f.write(copied_data)
     f.write("\n")
+    print("Added.")
+    get_id(copied_data)
