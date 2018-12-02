@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: read regular file
+# key: rfile
+# --
+with open($1, "r") as f:
+     $0

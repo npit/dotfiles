@@ -11,6 +11,7 @@
 
 * Search: 
   search for a pattern, list all results in buffer: SPC s d
+  search for a keybind: SPC ?
   
 * Buffers: b
  latest buffer: `SPC TAB` (explicit shortcut)
@@ -33,6 +34,12 @@
 - Paste from clipboard `C y'
 - cheatsheet [https://www.gnu.org/software/emacs/refcards/pdf/dired-ref.pdf][here]
 
+* yasnippet: 
+insert one: `SPC i s`
+cycle completions: `M /`
+* Reftex: r
+  (Gotta be in a latex major mode)
+  Show citation info from cursor in \cite{} : `r v`
 * Ranger: a r
 - mark: TAB
 - delete: D

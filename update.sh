@@ -10,6 +10,7 @@ cat ~/.tmux.conf > ./dotfiles/tmux.conf
 # SPACEMACS
 cp ~/.spacemacs ./dotfiles/spacemacs.develop
 cp ~/spacemacs.org ./
+cp -r ~/.emacs.d/private/snippets/ ./
 
 # FISH
 mkdir -p ./dotfiles/fish/
