@@ -1,0 +1,18 @@
+# program & folder presets
+export EDITOR="oni"
+export TERM_EDITOR='emacsclient -t -c --socket-name=/tmp/emacs1000/defaultserver'
+#export TERMINAL="/usr/bin/konsole -e fish"
+export TERMINAL="/usr/bin/konsole"
+export FILEMANAGER="/usr/bin/dolphin"
+export MYLINUX="/home/nik/Software/mylinux"
+export SCRIPTS="$MYLINUX/scripts"
+export CONFIG="$MYLINUX/config"
+export BIBS="$HOME/Documents/papers/library.bib"
+
+
+# executable path, java classpath and library path
+export PATH="$PATH"
+
+[ ! -z "$CLASSPATH" ] && CLASSPATH+=":"
+CLASSPATH+=""
+#LD_LIBRARY_PATH

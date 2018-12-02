@@ -1,0 +1,42 @@
+#! /usr/bin/env python3
+import json
+import clipboard
+from os.path import expanduser, join, exists, isfile, dirname
+from os import makedirs
+
+
+conf = {}
+conf_filepath = join(expanduser("~"), ".config", "addbib.json")
+
+# check for existence of config file
+if not exists(conf_filepath):
+    print("Configuration file {} does not exist, creating.")
+    bib_filepath = input("Give path to bibliography file:")
+    if not exists(bib_filepath):
+        print("Specified path does not exist.")
+        exit(1)
+    if not isfile(bib_filepath):
+        print("Specified path is not a file.")
+        exit(1)
+    # populate configuration
+    conf["bib_path"] = bib_filepath
+    # write config file for addbib
+    conf_dir = dirname(conf_filepath)
+    if not exists(conf_dir):
+        print("Creating configuration directory to {}".format(conf_dir))
+        makedirs(dirname(conf_filepath))
+    print("Writing configuration to {}".format(conf_filepath))
+    with open(conf_filepath, "w") as f:
+        json.dump(conf, f)
+else:
+    with open(conf_filepath, "r") as f:
+        conf = json.load(f)
+        bib_filepath = conf["bib_path"]
+
+if not exists(bib_filepath):
+    print("Warning: bib file is empty.")
+with open(bib_filepath, "a") as f:
+    copied_bib = clipboard.paste()
+    f.write("\n")
+    f.write(copied_bib)
+    f.write("\n")
