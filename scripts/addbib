@@ -18,8 +18,9 @@ def get_id(content):
         parser = BibTexParser()
         content = bibtexparser.loads(content)
         b_id = content.entries[0]["ID"]
-        clipboard.copy(b_id)
-        print("Copied citation id: [{}] to clipboard.".format(b_id))
+        citation_command = "\\cite{}".format("{" + b_id + "}")
+        clipboard.copy(citation_command)
+        print("Copied citation command: {} to clipboard.".format(citation_command))
     except:
         print("Failed to parse citation key.")
 
