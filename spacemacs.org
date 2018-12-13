@@ -85,6 +85,8 @@ cycle completions: `M /`
 - C-h v <variablename> to see possible variable values
 * Programming:
 - refactor variable: `SPC s e`
+* Errors: e
+  open error list: `SPC e l`
 * Python:
 - Execute: `SPC c c`
 

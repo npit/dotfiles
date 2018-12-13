@@ -12,6 +12,7 @@ copied_data = clipboard.paste()
 conf = {}
 conf_filepath = join(expanduser("~"), ".config","addbib", "config.json")
 
+# fetch citation id from entire bibtex
 def get_id(content):
     try:
         # write to a temp file
