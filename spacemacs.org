@@ -22,7 +22,10 @@
  split window : `- /`
  move to split: `S hjkl HJKL`
  golden ratio: `t g`
-
+* Navigation:
+ Scroll one line down / up: `C e`  `C y`
+ Scroll a few lines down / up: `C d`  `C u`
+ Scroll a page down / up: `C d`  `C u`
 * Workspaces
 - Start/goto a workspace: SPC l  w <num>
 - Cycle workspaces forwards: gt
@@ -75,7 +78,7 @@ cycle completions: `M /`
 * Misc:
 - Paste from clipboard `C y'
 - neotree (nerdtree-like) ``SPC f t''
-- In terminal, cycle through history with `C-j, C-k'
+- In terminal cycle through history with `C-j, C-k'
 - If colors are not right, make sure TERM is set to sth like xterm-256color
 - To auto-detect latex engine, put at end of .tex:
  

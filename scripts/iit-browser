@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 ssh -D 8080 work
-chromium --proxy-server="socks5://localhost:8080"
+chromium --user-data-dir=/tmp --proxy-server="socks5://localhost:8080"
 
