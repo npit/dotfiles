@@ -17,6 +17,7 @@
  latest buffer: `SPC TAB` (explicit shortcut)
  buffer menu: `b`
  close buffer: `d`
+ list buffers (navigable, mark for deletion,etc): C-x C-b
 
 * Windows: w
  split window : `- /`
@@ -92,5 +93,6 @@ cycle completions: `M /`
   open error list: `SPC e l`
 * Python:
 - Execute: `SPC c c`
-
-
+* Troubleshooting
+- Enable debugging : `M-x toggle-debug-on-error RET`
+- After enabling, reproducing the problem should open a *Backtrace* buffer

@@ -220,7 +220,7 @@ It should only modify the values of Spacemacs settings."
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(
-                         kaolin-dark
+                         tangotango
                          ujelly
                          jazz
                          omtose-darker
@@ -229,6 +229,7 @@ It should only modify the values of Spacemacs settings."
                          hemisu-dark
                          darktooth
                          farmhouse-dark
+                         kaolin-dark
                         )
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
@@ -513,6 +514,8 @@ before packages are loaded."
     (if (buffer-file-name)
         (abbreviate-file-name (buffer-file-name))
       (powerline-buffer-id)))
+  ; autocomplete
+  (setq auto-completion-enable-snippets-in-popup t)
   ; ranger
   (ranger-override-dired-mode t)
   ; imenu
@@ -542,7 +545,6 @@ before packages are loaded."
         org-ref-default-bibliography '("/home/nik/Documents/papers/library.bib")
         org-ref-pdf-directory "/home/nik/Documents/papers/pdf_documents/")
 
-
   ;; org ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   (with-eval-after-load 'org
     ;; here goes your Org config :)
@@ -555,8 +557,8 @@ before packages are loaded."
     (setq org-agenda-span 14)
     (setq org-agenda-start-on-weekday nil)
                                         ; org latex export to handle references
-    (setq org-latex-pdf-process 
-          "latexmk -pdflatex='lualatex -shell-escape -interaction nonstopmode' -pdf -f  %f")
+    (setq org-latex-pdf-process
+          '("latexmk -pdflatex='lualatex -shell-escape -interaction nonstopmode' -pdf -f  %f"))
     (setq org-agenda-files
           '(
             "/home/nik/work/iit/work.org"
