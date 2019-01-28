@@ -52,6 +52,7 @@ cycle completions: `M /`
 * Themes: T
 - Toggle: `n`
 -  List: `s`
+-  Preview theme from theme list: `TAB`
 
 * Toggling: t
 - line numbers: `n`

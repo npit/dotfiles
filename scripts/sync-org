@@ -14,8 +14,12 @@ rclone copy /home/nik/work/iit/work.org dbox:/org/
 
 echo "/home/nik/work/iit/phd/phd.org dbox:/org/"
 rclone copy /home/nik/work/iit/phd/phd.org dbox:/org/
+
 echo "/home/nik/work/iit/phd/publications.org dbox:/org/"
 rclone copy /home/nik/work/iit/phd/publications.org dbox:/org/
 
-echo "/home/nik/org/capture.org dbox:/org/"
-rclone copy /home/nik/org/capture.org dbox:/org/
+echo "/home/nik/work/iit/phd/calendar-publications.org dbox:/org/"
+rclone copy /home/nik/work/iit/phd/calendar-publications.org dbox:/org/
+
+echo "/home/nik/work/athena/athena.org dbox:/org/"
+rclone copy /home/nik/work/athena/athena.org dbox:/org/
