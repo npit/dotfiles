@@ -97,3 +97,6 @@ cycle completions: `M /`
 * Troubleshooting
 - Enable debugging : `M-x toggle-debug-on-error RET`
 - After enabling, reproducing the problem should open a *Backtrace* buffer
+* Spellcheck
+- autocorrect current word: `C M i`
+- autocorrect previous word: `C ;`

@@ -24,12 +24,12 @@ with open(filepath, "rb") as f:
 try:
     print("{} data.".format(len(data)))
     for i, d in enumerate(data):
-        print("Datum:", i+1,"type:", type(d), "len:", len(d))
+        print("Datum #", i+1,"type:", type(d), "len:", len(d))
         if type(d) == list:
             for inner in d[:2]:
                 if type(inner) == list: print("\tlen: {}".format(len(d)))
                 elif type(inner) == np.ndarray: print("\tshp: {}".format(inner.shape))
-            print("Total: {}".format(len(d)))
+            print("\t(Total: {})".format(len(d)))
         elif type(d) == np.ndarray:
              print("shp:", d.shape)
            

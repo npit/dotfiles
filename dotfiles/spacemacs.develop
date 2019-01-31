@@ -555,10 +555,27 @@ before packages are loaded."
     ;; (switch-to-buffer "*Org Agenda*")
     ;; (spacemacs/toggle-maximize-buffer)
 
+
+
+    ;; publications agenda
+    (setq org-agenda-custom-commands
+          '(("p" "Publications"
+             ((agenda ""
+                      (
+                       (org-agenda-span 200)
+                       (org-agenda-show-all-dates nil)
+                       (org-agenda-files '("/home/nik/work/iit/phd/publications.org"))
+                       )
+                      )
+              ))))
+
+
     (setq org-agenda-window-setup 'current-window)
     (setq org-agenda-start-day "-1d")
     (setq org-agenda-span 30)
     (setq org-agenda-start-on-weekday nil)
+
+    (setq org-agenda-show-all-dates nil)
     ; org latex export to handle references
     (setq org-export-in-background t)
     (setq org-latex-pdf-process
@@ -579,9 +596,7 @@ before packages are loaded."
     (setq org-refile-targets (quote ((nil :maxlevel . 9)
                                      (org-agenda-files :maxlevel . 9))))
 
-
-
-    )
+    ) ; eval after org load
   ; -------------- end of org config
 
   ;; org-export classes
@@ -739,7 +754,7 @@ before packages are loaded."
 
 
   ;; org to google calendar
-  (setq package-check-signature nil)
+  ;;(setq package-check-signature nil)
 
 
   ;; (use-package org-gcal
