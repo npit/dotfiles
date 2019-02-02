@@ -73,6 +73,48 @@ cycle completions: `M /`
 -PC m b`
 - Recompute day name in scheduled / deadline:
 `C-c C-c`
+* org-latex
+** basic document information
+#+TITLE: The document title
+#+DATE:\today
+#+AUTHOR:Nikiforos Pittaras
+#+SUBTITLE: The document title
+#+LATEX_HEADER: \usepackage{bm} 
+#+LATEX_HEADER: \usepackage{multicol}
+#+OPTIONS: H:3 toc:nil
+** Images
+   See https://orgmode.org/guide/Images-and-tables.html#Images-and-tables
+   
+  #+CAPTION: This is the caption for the next figure link (or table)
+#+NAME:   fig:SED-HR4049
+[[./img/a.jpg]]
+** Tables: 
+   #+CAPTION: This is the caption for the next table (or link)
+   #+NAME:   tbl:basic-data
+   | ... | ... |
+   | dog | cat |
+   |-----+-----|
+   | one | two |
+   
+** Arbitrary latex block
+  #+BEGIN_LATEX
+  \documentstyle{amsart}
+  \begin{document}
+  \nocite{*}
+  \bibliographystyle{amsplain}
+  \bibliography{bib-filename}
+  \end{document}
+#+END_LATEX
+** Beamer
+- Enable beamer exporting with `org-beamer-mode` 
+- Options and settings 
+#+BEAMER_THEME: Frankfurt
+#+BEAMER_INNER_THEME: rounded
+#+BEAMER_FRAME_LEVEL: 3
+#+LATEX_HEADER: \usepackage{bm} 
+#+LATEX_HEADER: \usepackage{multicol}
+#+OPTIONS: H:3 toc:nil
+  
 * Macros
 - Start defining C-x (
 - Stop defining C-x )
