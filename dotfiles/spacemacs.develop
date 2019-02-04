@@ -339,7 +339,7 @@ It should only modify the values of Spacemacs settings."
 
    ;; If non-nil the frame is fullscreen when Emacs starts up. (default nil)
    ;; (Emacs 24.4+ only)
-   dotspacemacs-fullscreen-at-startup t
+   dotspacemacs-fullscreen-at-startup nil
 
    ;; If non-nil `spacemacs/toggle-fullscreen' will not use native fullscreen.
    ;; Use to disable fullscreen animations in OSX. (default nil)
@@ -525,9 +525,11 @@ before packages are loaded."
   ; imenu
   (setq imenu-list-focus-after-activation t)
   ;; browser
-  (setq browse-url-browser-function 'browse-url-generic
-        browse-url-generic-program "chromium")
 
+  (setq browse-url-browser-function 'browse-url-generic
+        browse-url-generic-program (with-temp-buffer (insert-file-contents "~/.config/mylocalconfig/browser.txt")(string-trim(buffer-string))))
+
+  
   ; transient state
   (setq dotspacemacs-enable-paste-transient-state 1)
   ; remaps
@@ -559,8 +561,8 @@ before packages are loaded."
 
 
 
-    ;; set org-directory
-    (setq org-directory (with-temp-buffer (insert-file-contents "~/.config/local-machine/org-directory.txt")(string-trim(buffer-string))))
+    ;; org-directory
+    (setq org-directory (with-temp-buffer (insert-file-contents "~/.config/mylocalconfig/org-directory.txt")(string-trim(buffer-string))))
     ;; publications agenda
     (setq org-agenda-custom-commands
           '(("p" "Publications"
