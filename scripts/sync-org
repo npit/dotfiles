@@ -1,25 +1,25 @@
 #!/usr/bin/env bash
 
-echo "/home/nik/org/capture.org dbox:/org/"
+org_dir="$(cat ~/.config/mylocalconfig/org-directory.txt)"
+echo "Syncing from org directory: ${org_dir}"
+
+echo "${org_dir}/capture.org dbox:/org/"
 rclone copy /home/nik/org/capture.org dbox:/org/
 
-echo "/home/nik/life.org dbox:/org/"
+echo "${org_dir}/life.org dbox:/org/"
 rclone copy /home/nik/life.org dbox:/org/
 
-echo "/home/nik/notes.org dbox:/org/"
+echo "${org_dir}/notes.org dbox:/org/"
 rclone copy /home/nik/notes.org dbox:/org/
 
-echo "/home/nik/work/iit/work.org dbox:/org/"
+echo "${org_dir}/work.org dbox:/org/"
 rclone copy /home/nik/work/iit/work.org dbox:/org/
 
-echo "/home/nik/work/iit/phd/phd.org dbox:/org/"
+echo "${org_dir}/phd.org dbox:/org/"
 rclone copy /home/nik/work/iit/phd/phd.org dbox:/org/
 
-echo "/home/nik/work/iit/phd/publications.org dbox:/org/"
+echo "${org_dir}/publications.org dbox:/org/"
 rclone copy /home/nik/work/iit/phd/publications.org dbox:/org/
 
-echo "/home/nik/work/iit/phd/calendar-publications.org dbox:/org/"
-rclone copy /home/nik/work/iit/phd/calendar-publications.org dbox:/org/
-
-echo "/home/nik/work/athena/athena.org dbox:/org/"
+echo "${org_dir}/athena.org dbox:/org/"
 rclone copy /home/nik/work/athena/athena.org dbox:/org/
