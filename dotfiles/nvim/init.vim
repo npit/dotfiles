@@ -162,8 +162,9 @@ map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 syntax on
 
-colorscheme Revolution
+" colorscheme Revolution
 " colorscheme alduin
+colorscheme PaperColor
 
 " Always display the powerline
 set laststatus=2
