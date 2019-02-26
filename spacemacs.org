@@ -56,13 +56,15 @@ cycle completions: `M /`
 
 * Toggling: t
 - line numbers: `n`
-
+- relative line numbers: `r`
+- centerd point: `-`
+- hightlighting: `h`
 * mu4e: a M
 - Follow link: `M RET`
 - Reply/Forward/Compose: `R/F/C`
 
 * Org: m (major mode)
-- Archive subtree: `A`
+- Archive subtree: `, s A`
 - things to do [/] [%] 
 -[ ] thing 1
 -[ ] thing 2

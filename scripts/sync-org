@@ -7,19 +7,16 @@ echo "${org_dir}/capture.org dbox:/org/"
 rclone copy /home/nik/org/capture.org dbox:/org/
 
 echo "${org_dir}/life.org dbox:/org/"
-rclone copy /home/nik/life.org dbox:/org/
-
-echo "${org_dir}/notes.org dbox:/org/"
-rclone copy /home/nik/notes.org dbox:/org/
+rclone copy /home/nik/org/life.org dbox:/org/
 
 echo "${org_dir}/work.org dbox:/org/"
-rclone copy /home/nik/work/iit/work.org dbox:/org/
+rclone copy /home/nik/org/work.org dbox:/org/
 
 echo "${org_dir}/phd.org dbox:/org/"
-rclone copy /home/nik/work/iit/phd/phd.org dbox:/org/
+rclone copy /home/nik/org/phd.org dbox:/org/
 
 echo "${org_dir}/publications.org dbox:/org/"
-rclone copy /home/nik/work/iit/phd/publications.org dbox:/org/
+rclone copy /home/nik/org/publications.org dbox:/org/
 
 echo "${org_dir}/athena.org dbox:/org/"
-rclone copy /home/nik/work/athena/athena.org dbox:/org/
+rclone copy /home/nik/org/athena.org dbox:/org/
