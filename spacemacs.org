@@ -75,6 +75,9 @@ cycle completions: `M /`
 -PC m b`
 - Recompute day name in scheduled / deadline:
 `C-c C-c`
+- capture: `SPC a o c`
+- clock in / out: `SPC a C i ` / `SPC a C o `
+
 * org-latex
 ** basic document information
 #+TITLE: The document title

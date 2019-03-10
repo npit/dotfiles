@@ -572,9 +572,10 @@ before packages are loaded."
 
     ;; org-directory
     (setq org-directory (with-temp-buffer (insert-file-contents "~/.config/mylocalconfig/org-directory.txt")(string-trim(buffer-string))))
-    ;; publications agenda
     (setq org-agenda-custom-commands
-          '(("p" "Publications"
+          ;; publications agenda
+          '(
+            ("p" "Publications"
              ((agenda ""
                       (
                        (org-agenda-span 200)
@@ -582,7 +583,19 @@ before packages are loaded."
                        (org-agenda-files (list(concat org-directory "/publications.org")))
                        )
                       )
-              ))))
+              ))
+          ;; schedule agenda
+          ("s" "Schedule"
+             ((agenda ""
+                      (
+                       (org-agenda-span 200)
+                       (org-agenda-show-all-dates nil)
+                       (org-agenda-files (list(concat org-directory "/schedule.org")))
+                       )
+                      )
+              ))
+          )
+          )
 
 
     (setq org-agenda-window-setup 'current-window)
