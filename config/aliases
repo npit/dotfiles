@@ -2,7 +2,7 @@
 #########
 alias upall="sudo pacman -Syu"
 alias upallclose="sudo pacman -Syu --noconfirm && poweroff"
-alias mylinux="cd /home/nik/Software/mylinux"
+alias mylinux="cd /home/nik/software/dotfiles"
 alias aur="trizen"
 
 
@@ -18,7 +18,8 @@ alias nvimrc="$TERM_EDITOR ~/.config/nvim/*"
 alias vim="nvim"
 alias nvim="nvim -p"
 alias v="nvim"
-alias ee="emacsclient -t -c --socket-name=/tmp/emacs1000/defaultserver"
+# alias ee="emacsclient -t -c --socket-name=/tmp/emacs1000/defaultserver"
+alias ee="emacsclient -t "
 alias tmuxrc="$TERM_EDITOR ~/.tmux.conf"
 alias i3rc="$TERM_EDITOR ~/.config/i3/config"
 alias kcp='kioclient copy'
@@ -32,29 +33,19 @@ export PATH=$PATH:$SCRIPTS
 # directory cd shortcuts
 ##########################
 
-alias papers="cd $HOME/Documents/papers"
+alias papers="cd $HOME/papers"
 alias work="cd $HOME/work/iit"
 alias torr="cd $HOME/Downloads/torrents"
-alias nle="cd $HOME/work/iit/submissions/NLE-special/code"
-alias nlesi="cd $HOME/work/iit/submissions/NLE-special/experiments"
+alias nle="cd $HOME/software/sematext"
 alias disk="df -h"
 #
 # ncsr work
-alias yds="cd ~/work/iit/YDS"
-alias bde="cd $HOME/work/iit/BDE/bde-event-detection-sc7"
-alias bdedock="cd $HOME/work/iit/dockerfile/docker-bde-event-detection-sc7"
-alias bdetools="cd $HOME/work/iit/bdetools"
-alias harvest="cd $HOME/work/iit/harvester/harvester-frontend_"
-alias trest="cd ~/work/iit/twitterRest"
-alias story="cd /home/nik/work/iit/storybot/storybot_repo/storybot"
-alias exdisk="cd '/run/media/nik/TOSHIBA EXT/Academic/msc-thesis/datasets/ccv'"
 alias phd="cd /home/nik/work/iit/phd/"
 alias biorepr="cd /home/nik/work/iit/phd/collabs/biorepr"
 
 # misc
 alias perspage="cd /home/nik/Software/personalpage"
 alias game="cd /home/nik/Software/game"
-alias resource="source $CONFIG/startup.sh"
 alias realias="source $CONFIG/aliases"
 alias ipy="ipython"
 
@@ -66,7 +57,7 @@ alias sudo='sudo '
 alias datec='date -u +"%Y%m%d_%H%M%S"'
 alias dated='date -u +"%Y%m%d_%H%M%S"'
 
-alias bib="python3 $HOME/Software/bibtex-tagger/bib.py"
+alias bib="python3 $HOME/software/bibterm/bib.py"
 alias acl="$TERMINAL & disown"
 alias rcl="acl ; exit"
 alias temp="watch sensors"
@@ -78,13 +69,7 @@ alias gitls="git diff-tree -r --no-commit-id --name-only"
 alias texedit="$TERM_EDITOR -p *.tex *.bib"
 alias pgrepa="pgrep -a "
 
-# reminders
-alias reminders="source $CONFIG/reminders"
-alias remindset="$TERM_EDITOR $CONFIG/reminders"
-alias hosts='$TERM_EDITOR /etc/hosts'
 alias more="less"
-
-
 
 # builds
 alias repos="cd ~/.m2/repository"
@@ -92,12 +77,6 @@ alias repos="cd ~/.m2/repository"
 # temporary
 # UOA
 alias uoa="cd $HOME/uoa/msc-thesis/implementation"
-alias qtcrc="qtcreator *.h *.c & disown"
-alias qtcrcpp="qtcreator *.hpp *.cpp & disown"
-
-
-
-
 
 # misc
 alias sshconf="$EDITOR ~/.ssh/config"

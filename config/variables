@@ -1,14 +1,20 @@
 # program & folder presets
-export EDITOR="oni"
-export TERM_EDITOR='emacsclient -t -c --socket-name=/tmp/emacs1000/defaultserver'
+export EDITOR="vim -u NONE"
+
+export TERM_EDITOR='vim -u NONE'
+# export TERM_EDITOR='emacsclient -t -c --socket-name=/tmp/emacs1000/defaultserver'
 #export TERMINAL="/usr/bin/konsole -e fish"
 export TERMINAL="/usr/bin/konsole"
 export FILEMANAGER="/usr/bin/dolphin"
-export MYLINUX="/home/nik/Software/mylinux"
+export MYLINUX="/home/nik/software/dotfiles"
 export SCRIPTS="$MYLINUX/scripts"
 export CONFIG="$MYLINUX/config"
-export BIBS="$HOME/Documents/papers/library.bib"
+export BIBS="$HOME/papers/library.bib"
+# this below needs a fix for emacs
+export PYTHONBREAKPOINT=
 
+export NLTK_DATA="$HOME/software/nltk_data"
+export SCIKIT_LEARN_DATA="$HOME/software/scikit_learn_data"
 
 # executable path, java classpath and library path
 export PATH="$PATH"

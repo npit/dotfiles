@@ -21,3 +21,6 @@ let g:indentLine_concealcursor = 1
 let g:indentLine_leadingSpaceEnabled = 1
 "let g:indentLine_setColors = 0
 "let g:indentLine_conceallevel =  0
+
+let g:airline_powerline_fonts = 1
+let g:airline_theme='deus'

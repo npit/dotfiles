@@ -3,20 +3,7 @@
 org_dir="$(cat ~/.config/mylocalconfig/org-directory.txt)"
 echo "Syncing from org directory: ${org_dir}"
 
-echo "${org_dir}/capture.org dbox:/org/"
-rclone copy /home/nik/org/capture.org dbox:/org/
-
-echo "${org_dir}/life.org dbox:/org/"
-rclone copy /home/nik/org/life.org dbox:/org/
-
-echo "${org_dir}/work.org dbox:/org/"
-rclone copy /home/nik/org/work.org dbox:/org/
-
-echo "${org_dir}/phd.org dbox:/org/"
-rclone copy /home/nik/org/phd.org dbox:/org/
-
-echo "${org_dir}/publications.org dbox:/org/"
-rclone copy /home/nik/org/publications.org dbox:/org/
-
-echo "${org_dir}/athena.org dbox:/org/"
-rclone copy /home/nik/org/athena.org dbox:/org/
+for f in $(echo "work life phd publications athena schedule"); do
+	echo "${org_dir}/${f}.org dbox:/org/"
+	rclone copy  "${org_dir}/${f}.org" "dbox:/org/"
+done

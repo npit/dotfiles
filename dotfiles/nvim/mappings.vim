@@ -5,9 +5,9 @@ map <Leader>gY "+Y
 
 "  yank to eol
 nnoremap Y y$
-" single key command mod
-nnoremap : ;
-nnoremap ; :
+" " single key command mod
+" nnoremap : ;
+" nnoremap ; :
 "
 " paste toggle
 set pastetoggle=<F2>
