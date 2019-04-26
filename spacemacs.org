@@ -1,0 +1,149 @@
+ Spacemacs cheatsheet
+* Files: f
+ open file: `f`
+ save file: `s`
+ open dotfile: `e d`
+ open dotfile: `e r`
+ copy path of file in current buffer: `y`
+* Projects: p
+ list recent projects: p
+ project-wide interactive replace: R
+
+* Search: 
+  search for a pattern, list all results in buffer: SPC s d
+  search for a keybind: SPC ?
+  
+* Buffers: b
+ latest buffer: `SPC TAB` (explicit shortcut)
+ buffer menu: `b`
+ close buffer: `d`
+ list buffers (navigable, mark for deletion,etc): C-x C-b
+
+* Windows: w
+ split window : `- /`
+ move to split: `S hjkl HJKL`
+ golden ratio: `t g`
+* Navigation:
+ Scroll one line down / up: `C e`  `C y`
+ Scroll a few lines down / up: `C d`  `C u`
+ Scroll a page down / up: `C d`  `C u`
+* Workspaces
+- Start/goto a workspace: SPC l  w <num>
+- Cycle workspaces forwards: gt
+- Cycle workspaces backwards: gT
+
+* Dired: a d
+- Copy / move / delete file`Shift C / R / D` 
+- Edit file : `ENTER`
+- Paste from clipboard `C y'
+- cheatsheet [https://www.gnu.org/software/emacs/refcards/pdf/dired-ref.pdf][here]
+
+* yasnippet: 
+insert one: `SPC i s`
+cycle completions: `M /`
+* Reftex: r
+  (Gotta be in a latex major mode)
+  Show citation info from cursor in \cite{} : `r v`
+* Ranger: a r
+- mark: TAB
+- delete: D
+- copy/cut/paste: yy/dd/pp
+ 
+* Themes: T
+- Toggle: `n`
+-  List: `s`
+-  Preview theme from theme list: `TAB`
+
+* Toggling: t
+- line numbers: `n`
+- relative line numbers: `r`
+- centerd point: `-`
+- hightlighting: `h`
+* mu4e: a M
+- Follow link: `M RET`
+- Reply/Forward/Compose: `R/F/C`
+
+* Org: m (major mode)
+- Archive subtree: `, s A`
+- things to do [/] [%] 
+-[ ] thing 1
+-[ ] thing 2
+-[ ] thing 3
+-[ ] thing 4
+-
+- Edit subtree in its own buffer: 
+-PC m b`
+- Recompute day name in scheduled / deadline:
+`C-c C-c`
+- capture: `SPC a o c`
+- clock in / out: `SPC a C i ` / `SPC a C o `
+
+* org-latex
+** basic document information
+#+TITLE: The document title
+#+DATE:\today
+#+AUTHOR:Nikiforos Pittaras
+#+SUBTITLE: The document title
+#+LATEX_HEADER: \usepackage{bm} 
+#+LATEX_HEADER: \usepackage{multicol}
+#+OPTIONS: H:3 toc:nil
+** Images
+   See https://orgmode.org/guide/Images-and-tables.html#Images-and-tables
+   
+  #+CAPTION: This is the caption for the next figure link (or table)
+#+NAME:   fig:SED-HR4049
+[[./img/a.jpg]]
+** Tables: 
+   #+CAPTION: This is the caption for the next table (or link)
+   #+NAME:   tbl:basic-data
+   | ... | ... |
+   | dog | cat |
+   |-----+-----|
+   | one | two |
+   
+** Arbitrary latex block
+  #+BEGIN_LATEX
+  \documentstyle{amsart}
+  \begin{document}
+  \nocite{*}
+  \bibliographystyle{amsplain}
+  \bibliography{bib-filename}
+  \end{document}
+#+END_LATEX
+** Beamer
+- Enable beamer exporting with `org-beamer-mode` 
+- Options and settings 
+#+BEAMER_THEME: Frankfurt
+#+BEAMER_INNER_THEME: rounded
+#+BEAMER_FRAME_LEVEL: 3
+#+LATEX_HEADER: \usepackage{bm} 
+#+LATEX_HEADER: \usepackage{multicol}
+#+OPTIONS: H:3 toc:nil
+  
+* Macros
+- Start defining C-x (
+- Stop defining C-x )
+- Execute: C-x e or F4
+* Misc:
+- Paste from clipboard `C y'
+- neotree (nerdtree-like) ``SPC f t''
+- In terminal cycle through history with `C-j, C-k'
+- If colors are not right, make sure TERM is set to sth like xterm-256color
+- To auto-detect latex engine, put at end of .tex:
+ 
+- `,' is a shortcut for `SPC-m' (major mode), like the vim leader
+- C-\ to change language without messing up normal mode navigation
+- SPC-b-i to show awesome outliner sidebar
+- C-h v <variablename> to see possible variable values
+* Programming:
+- refactor variable: `SPC s e`
+* Errors: e
+  open error list: `SPC e l`
+* Python:
+- Execute: `SPC c c`
+* Troubleshooting
+- Enable debugging : `M-x toggle-debug-on-error RET`
+- After enabling, reproducing the problem should open a *Backtrace* buffer
+* Spellcheck
+- autocorrect current word: `C M i`
+- autocorrect previous word: `C ;`
