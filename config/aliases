@@ -34,7 +34,7 @@ export PATH=$PATH:$SCRIPTS
 ##########################
 
 alias papers="cd $HOME/papers"
-alias work="cd $HOME/work/iit"
+alias work="cd $HOME/work"
 alias torr="cd $HOME/Downloads/torrents"
 alias nle="cd $HOME/software/sematext"
 alias disk="df -h"

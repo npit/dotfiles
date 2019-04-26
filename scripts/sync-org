@@ -3,7 +3,13 @@
 org_dir="$(cat ~/.config/mylocalconfig/org-directory.txt)"
 echo "Syncing from org directory: ${org_dir}"
 
+# dropbox
 for f in $(echo "work life phd publications athena schedule"); do
 	echo "${org_dir}/${f}.org dbox:/org/"
 	rclone copy  "${org_dir}/${f}.org" "dbox:/org/"
 done
+
+# gitlab
+cd "${org_dir}"
+git add --all
+git push origin master
