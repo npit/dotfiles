@@ -1,7 +1,7 @@
 # program & folder presets
-export EDITOR="vim -u NONE"
+export EDITOR="nvim -u NONE"
 
-export TERM_EDITOR='vim -u NONE'
+export TERM_EDITOR='nvim -u NONE'
 # export TERM_EDITOR='emacsclient -t -c --socket-name=/tmp/emacs1000/defaultserver'
 #export TERMINAL="/usr/bin/konsole -e fish"
 export TERMINAL="/usr/bin/konsole"

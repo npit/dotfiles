@@ -33,10 +33,12 @@ export PATH=$PATH:$SCRIPTS
 # directory cd shortcuts
 ##########################
 
+alias mvt="cd $HOME/athena/code/MVTopicModel/"
 alias papers="cd $HOME/papers"
 alias work="cd $HOME/work"
 alias torr="cd $HOME/Downloads/torrents"
 alias nle="cd $HOME/software/sematext"
+alias sema="cd $HOME/software/sematext"
 alias disk="df -h"
 #
 # ncsr work
