@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+# if exists, quit
+if [ -f "$SCRIPTS/$1" ]; then
+	echo "Already exists: $SCRIPTS/$1 : "
+	cat "$SCRIPTS/$1"
+	exit 1;
+fi
 # create new global script
 if [ "$#" -ne 1 ]; then
 	echo "Usage: $(basename $0) <scriptname>"

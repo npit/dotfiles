@@ -1,7 +1,7 @@
 # arch
 #########
 alias upall="sudo pacman -Syu"
-alias upallclose="sudo pacman -Syu --noconfirm && poweroff"
+alias upallclose="sudo pacman -Syu --noconfirm && shutdown"
 alias mylinux="cd /home/nik/software/dotfiles"
 alias aur="trizen"
 
@@ -39,6 +39,9 @@ alias work="cd $HOME/work"
 alias torr="cd $HOME/Downloads/torrents"
 alias nle="cd $HOME/software/sematext"
 alias sema="cd $HOME/software/sematext"
+alias semaj="cd $HOME/software/sematext-jnle"
+alias gener="cd $HOME/software/generate-embeddings"
+alias peekle="python3 /home/nik/software/sematext-jnle/peekle.py"
 alias disk="df -h"
 #
 # ncsr work
@@ -79,6 +82,7 @@ alias repos="cd ~/.m2/repository"
 # temporary
 # UOA
 alias uoa="cd $HOME/uoa/msc-thesis/implementation"
+alias nb="jupyter-notebook"
 
 # misc
 alias sshconf="$EDITOR ~/.ssh/config"

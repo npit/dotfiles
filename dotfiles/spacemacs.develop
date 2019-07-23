@@ -41,13 +41,16 @@ This function should only modify configuration layer settings."
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
+     dap
      helm
      html
      xkcd
      search-engine
      git
      neotree
-     auto-completion
+     (auto-completion :variables
+                      auto-completion-enable-snippets-in-popup t
+                      auto-completion-enable-help-tooltip t)
      c-c++
      better-defaults
      emacs-lisp
@@ -56,8 +59,10 @@ This function should only modify configuration layer settings."
      csv
      themes-megapack
      markdown
-     python
-     (ranger : variables
+     (python :variables
+             python-backend 'lsp
+             )
+     (ranger :variables
              ranger-cleanup-on-disable t
              ranger-show-literal nil
              ranger-show-preview t)
@@ -66,22 +71,22 @@ This function should only modify configuration layer settings."
      (colors :variables
              colors-enable-nyan-cat-progress-bar t)
      ;; markdown
-      org
-      (latex :variables
-             latex-enable-auto-fill nil
-             ;; latex-build-command "latexmk"
-             latex-enable-folding t)
+     org
+     (latex :variables
+            latex-enable-auto-fill nil
+            ;; latex-build-command "latexmk"
+            latex-enable-folding t)
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
      ;; version-control
-      (spell-checking :variables
-                      spell-checking-enable-auto-dictionary t
-                      spell-checking-enable-by-default nil)
-      (syntax-checking :variables
-                       syntax-checking-enable-by-default t)
-      mu4e
-     )
+     (spell-checking :variables
+                     spell-checking-enable-auto-dictionary t
+                     spell-checking-enable-by-default nil)
+     (syntax-checking :variables
+                      syntax-checking-enable-by-default t)
+
+     mu4e)
 
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -90,13 +95,13 @@ This function should only modify configuration layer settings."
    ;; To use a local version of a package, use the `:location' property:
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '(yasnippet-snippets beacon sound-wav)
+   dotspacemacs-additional-packages '(yasnippet-snippets beacon sound-wav jedi)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
 
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '(smartparens)
+   dotspacemacs-excluded-packages '(smartparens importmagic)
 
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
@@ -216,8 +221,8 @@ It should only modify the values of Spacemacs settings."
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(
+                         doom-one
                          material
-                         misterioso
                          seti
                          twilight-anti-bright
                          jazz
@@ -233,6 +238,7 @@ It should only modify the values of Spacemacs settings."
                          kaolin-dark
                          tangotango
                          deeper-blue
+                         misterioso
                         )
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
@@ -250,8 +256,11 @@ It should only modify the values of Spacemacs settings."
 
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro"
-                               :size 15
+   dotspacemacs-default-font '(
+                               "Source Code Pro"
+                               ;;"Fira Code"
+                               ;; "Inconsolata"
+                               :size 16
                                :weight normal
                                :width normal)
 
@@ -493,6 +502,7 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
 This function is called only while dumping Spacemacs configuration. You can
 `require' or `load' the libraries of your choice that will be included in the
 dump."
+  (require 'dap-python)
   )
 
 (defun dotspacemacs/user-config ()
@@ -503,6 +513,9 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
  ;; general ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;; path
+  (setq exec-path (append exec-path '((concat (getenv "HOME") "/.local/bin"))))
+
   ;; hightlighting
   (spacemacs/toggle-highlight-current-line-globally-off)
   (spacemacs/toggle-automatic-symbol-highlight-off)
@@ -527,8 +540,6 @@ before packages are loaded."
     (if (buffer-file-name)
         (abbreviate-file-name (buffer-file-name))
       (powerline-buffer-id)))
-  ; autocomplete
-  (setq auto-completion-enable-snippets-in-popup t)
   ; ranger
   (ranger-override-dired-mode t)
   ; imenu
@@ -541,7 +552,7 @@ before packages are loaded."
 
   ; pomodoro
 
-  (setq org-pomodoro-long-break-sound (concat (getenv "HOME") "/.config/mylocalconfig/pomodoro-stop2.wav"))
+  (setq org-pomodoro-long-break-sound (concat (getenv "HOME") "/.config/mylocalconfig/pomodoro-stop.wav"))
   (setq org-pomodoro-short-break-sound (concat (getenv "HOME") "/.config/mylocalconfig/pomodoro-stop.wav"))
   (setq org-pomodoro-start-sound (concat (getenv "HOME") "/.config/mylocalconfig/pomodoro-start.wav"))
   (setq org-pomodoro-finished-sound (concat (getenv "HOME") "/.config/mylocalconfig/pomodoro-finished.wav"))
@@ -569,9 +580,9 @@ before packages are loaded."
   ;; (setq reftex-default-bibliography '("/home/nik/Documents/papers/library-nokeywords.bib"))
 
   ;; see org-ref for use of these variables
-  (setq org-ref-bibliography-notes "~/Dropbox/bibliography/notes.org"
-        org-ref-default-bibliography '(concat (getenv "HOME") "/Documents/papers/library.bib")
-        org-ref-pdf-directory '(concat (getenv "HOME") "/Documents/papers/pdf_documents/"))
+  (setq org-ref-bibliography-notes "~/org/bibliography-notes.org"
+        org-ref-default-bibliography '(concat (getenv "HOME") "/papers/library.bib")
+        org-ref-pdf-directory '(concat (getenv "HOME") "/papers/pdfs/"))
 
   ;; org ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   (with-eval-after-load 'org
@@ -597,6 +608,18 @@ before packages are loaded."
                        )
                       )
               ))
+
+            ("w" "Athena work"
+             ((agenda ""
+                      (
+                       (org-agenda-span 200)
+                       (org-agenda-show-all-dates nil)
+                       (org-agenda-files (list(concat org-directory "/athena.org")))
+                       )
+                      )
+              ))
+
+
           ;; schedule agenda
           ("s" "Schedule"
              ((agenda ""
@@ -623,7 +646,6 @@ before packages are loaded."
           '("latexmk -pdflatex='lualatex -shell-escape -interaction nonstopmode' -pdf -f  %f"))
     (setq org-agenda-files
           (list
-            (concat org-directory "/work.org")
             (concat org-directory "/phd.org")
             (concat org-directory "/publications.org")
             (concat org-directory "/athena.org")
