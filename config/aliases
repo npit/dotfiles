@@ -58,6 +58,7 @@ alias ipy="ipython"
 # terminal
 #############
 alias sudo='sudo '
+alias ls='exa'
 
 alias datec='date -u +"%Y%m%d_%H%M%S"'
 alias dated='date -u +"%Y%m%d_%H%M%S"'

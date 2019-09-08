@@ -151,3 +151,11 @@ cycle completions: `M /`
 * Spellcheck
 - autocorrect current word: `C M i`
 - autocorrect previous word: `C ;`
+* Debug: (,d)
+  - Enable dap mode and the required packages (See repo)
+  - Run debugging: `dd`
+  - Run last config: `dl`
+  - Stop debugging: `da`
+  - Step debugging: `ds`
+  - Run REPL: `d'`
+  - Evaluate: `dee`
