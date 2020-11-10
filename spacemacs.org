@@ -1,4 +1,6 @@
- Spacemacs cheatsheet
+Spacemacs cheatsheet
+* Editing:
+ surround selection with, e.g. ): `s)`
 * Files: f
  open file: `f`
  save file: `s`
@@ -28,7 +30,11 @@
  Scroll a few lines down / up: `C d`  `C u`
  Scroll a page down / up: `C d`  `C u`
  Find word that begins with letter: SPC j w <letter>
+ Find line that begins with letter: SPC j l <letter>
  Find file at point: `g f`
+ Add a mark with the label 'a' at the curr line: ma
+ Jump to mark with the label 'a' at the curr line: `a
+ Jump to the line with a mark with the label 'a' at the curr line: 'a
 * Workspaces
 - Start/goto a workspace: SPC l  w <num>
 - Cycle workspaces forwards: gt
@@ -74,12 +80,15 @@ cycle completions: `M /`
 -[ ] thing 4
 -
 - Edit subtree in its own buffer: 
--PC m b`
+- `SPC m b`
 - Recompute day name in scheduled / deadline:
 `C-c C-c`
 - capture: `SPC a o c`
 - clock in / out: `SPC a C i ` / `SPC a C o `
-
+- technical documentation tutorial, theming
+   https://www.youtube.com/watch?v=0g9BcZvQbXU
+- Show agenda columns: `C-c C-x C-c`
+- Generate columnview table `C-c C-x i`
 * org-latex
 ** basic document information
 #+TITLE: The document title

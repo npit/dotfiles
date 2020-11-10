@@ -1,23 +1,36 @@
 #!/usr/bin/env python3
 
 import pandas
-import sys    
-import os    
-import code    
-import argparse    
-    
-data = []    
-try:
-	paths=  sys.argv[1:]
-except:
-	print("Need input path(s)")
-	exit(1)
+import sys
+import os
+import code
+import argparse
+
+def nolimrows():
+    pandas.set_option('display.max_rows',None)
+def limrows():
+    pandas.set_option('display.max_rows',30)
+	
+parser=argparse.ArgumentParser()
+parser.add_argument("-sep", required=False)
+parser.add_argument("--nohead", required=False, action="store_true")
+parser.add_argument("files", nargs="*")
+args = parser.parse_args()
+sep = "," if args.sep is None else args.sep
+paths = args.files
+data = []
 for path in paths:
-    data.append(pandas.read_csv(path))
+    print("Reading ", path)
+    if args.nohead:
+        data.append(pandas.read_csv(path, sep=sep, header=None))
+    else:
+        data.append(pandas.read_csv(path, sep=sep))
 print("{} csv'd data item(s) in variable 'data'.".format(len(data)))
-if len(data) == 1:
-	data = data[0]
 print("Entering interactive mode")
 print("=========================")
-code.interact(local=locals())     
-
+print("Columns:")
+for d in data:
+    print(" ".join(d.columns))
+if len(data) == 1:
+    data = data[0]
+code.interact(local=locals())

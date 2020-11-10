@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-echo "$(pwd)" | xclip -selection clipboard
+echo -n "$(pwd)"  | xclip -selection clipboard

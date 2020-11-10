@@ -50,18 +50,23 @@ alias biorepr="cd /home/nik/work/iit/phd/collabs/biorepr"
 
 # misc
 alias perspage="cd /home/nik/Software/personalpage"
-alias game="cd /home/nik/Software/game"
+alias game="cd /home/nik/projects/union"
 alias realias="source $CONFIG/aliases"
 alias ipy="ipython"
 
 
 # terminal
 #############
-alias sudo='sudo '
+# alternatives
 alias ls='exa'
+alias cat='bat'
+alias ccat='/usr/bin/cat'
+alias grep='rg'
 
 alias datec='date -u +"%Y%m%d_%H%M%S"'
 alias dated='date -u +"%Y%m%d_%H%M%S"'
+
+alias bibs="vim $BIBS"
 
 alias bib="python3 $HOME/software/bibterm/bib.py"
 alias acl="$TERMINAL & disown"
@@ -74,16 +79,16 @@ alias tre="tree"
 alias gitls="git diff-tree -r --no-commit-id --name-only"
 alias texedit="$TERM_EDITOR -p *.tex *.bib"
 alias pgrepa="pgrep -a "
+alias python37="/usr/bin/python3.7"
+alias duu="du -h -d 1"
+alias duug="du -h -d 1 | grep G"
 
 alias more="less"
-
 # builds
 alias repos="cd ~/.m2/repository"
 
-# temporary
-# UOA
-alias uoa="cd $HOME/uoa/msc-thesis/implementation"
-alias nb="jupyter-notebook"
-
 # misc
 alias sshconf="$EDITOR ~/.ssh/config"
+
+# temporary
+alias nb="jupyter-notebook"

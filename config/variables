@@ -11,7 +11,7 @@ export SCRIPTS="$MYLINUX/scripts"
 export CONFIG="$MYLINUX/config"
 export BIBS="$HOME/papers/library.bib"
 # this below needs a fix for emacs
-export PYTHONBREAKPOINT=
+export PYTHONBREAKPOINT="$(which ipdb)"
 
 export NLTK_DATA="$HOME/software/nltk_data"
 export SCIKIT_LEARN_DATA="$HOME/software/scikit_learn_data"

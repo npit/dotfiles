@@ -5,19 +5,26 @@ import sys
 import os    
 import code    
 import argparse    
+from collections import namedtuple
     
 data = []    
 try:
-	paths=  sys.argv[1:]
+        paths=  sys.argv[1:]
 except:
-	print("Need input path(s)")
-	exit(1)
+        print("Need input path(s)")
+        exit(1)
 for path in paths:
-	with open(path, "rb") as f:    
-	    data.append(pickle.load(f))
+        with open(path, "rb") as f:    
+            d = pickle.load(f)
+        #    d = namedtuple(d, fields=d.keys())
+        data.append(d)
 print("{} pickled data item(s) in variable 'data'.".format(len(data)))
 if len(data) == 1:
-	data = data[0]
+        data = data[0]
+        try:
+            print("Keys:", " ".join(data.keys()))
+        except:
+            pass
 print("Entering interactive mode")
 print("=========================")
 code.interact(local=locals())     
