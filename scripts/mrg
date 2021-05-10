@@ -1,0 +1,34 @@
+#!/usr/bin/env python
+import re
+import os
+import clipboard
+
+if "BIBS" not in os.environ:
+	print("No env. variable BIBS!")
+	exit(1)
+fpath=os.environ["BIBS"]
+if not os.path.exists(fpath):
+	print("No file exists:", fpath)
+	exit(1)
+
+data = clipboard.paste()
+print("Pasting:\n")
+print(data)
+
+data = "\n" + data
+with open(fpath, "a") as f:
+	f.write(data)
+
+# get key
+k = [x for x in data.split("\n") if x][0]
+k = re.sub(".*{", "", k)
+k = re.sub(",", "", k)
+
+
+clipboard.copy(k)
+print("Copied:", k)
+# cp = "\cite{" + k + "}"
+# clipboard.copy(cp)
+# print("Copied:", cp)
+
+

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+[ $# -lt 1 ] && echo  "Need arg" && exit 1
+echo -n "$(pwd)/$1"  | xclip -selection clipboard
+
